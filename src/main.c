@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
 
         snprintf(Name, BUF, "wget %s", argv[2]);
 
-        Get(Name);
+        Get(Name, argv);
     }
 
     else if (
