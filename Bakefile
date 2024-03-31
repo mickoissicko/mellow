@@ -1,0 +1,11 @@
+! Bakefile
+
+out: [../bin/mmgr]
+src: [make_folder.cpp fm.c aurhelper.c fetch.c main.c];
+run: [cd src/ && g++];
+
+!main{
+    >[run] -o [out] [src];
+}
+
+!serve{}
