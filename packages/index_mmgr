@@ -1,2 +1,8 @@
-server_test
+hello-world
+openjdk-win32
+openjdk-macos-arm-dmg
+openjdk-macos-arm-pkg
+openjdk-macos-x86-dmg
+openjdk-macos-x86-pkg
+openjdk-linux
 

@@ -126,4 +126,7 @@ void Get(char* n, char** argv)
         printf("Do you have 'wget' installed?\n");
         exit(1);
     }
+
+    
 }
+
