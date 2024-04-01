@@ -16,7 +16,9 @@ int main(int argc, char* argv[])
         !strcmp(argv[1], "init") ||
         !strcmp(argv[1], "sync")
     ){
-        strcpy(Name, argv[2]);
+        if (argc > 2)
+            strcpy(Name, argv[2]);
+
         Get(Name, argv);
     }
 
