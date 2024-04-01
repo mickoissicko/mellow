@@ -118,6 +118,7 @@ void Get(char* n, char** argv)
 
     free(Lineptr);
 
+    chdir(FormattedPath);
     Status = system(WgetCommand);
 
     if (Status != 0)
