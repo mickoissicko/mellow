@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
         !strcmp(argv[1], "--daur-ng")    ||
         !strcmp(argv[1], "--daur-ng-nc") ||
         !strcmp(argv[1], "--daur-nc")    ||
-        !strcmp(argv[1], "--daur")      
+        !strcmp(argv[1], "--daur")
     ){
         AurHelper(argc, argv);
         return 0;
