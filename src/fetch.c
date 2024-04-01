@@ -20,6 +20,7 @@ void Get(char* n, char** argv)
     char UpdatePackagesIndex[MAX_LEN];
     char UpdatePackagesLink[MAX_LEN];
     char FormattedPath[MAX_PATH_LEN];
+    char DownloadPath[MAX_PATH_LEN];
     char WgetCommand[MAX_LEN];
 
     char* Path;
@@ -118,9 +119,20 @@ void Get(char* n, char** argv)
 
     free(Lineptr);
 
-    chdir(FormattedPath);
-    Status = system(WgetCommand);
+    char CdToDownloadPath[MAX_PATH_LEN];
 
+    snprintf(DownloadPath, Buf, "%s/downloads", FormattedPath);
+    snprintf(CdToDownloadPath, Buf, "cd %s", DownloadPath);
+
+    Status = system(CdToDownloadPath);
+    if (Status != 0)
+    {
+        MakeFolder(DownloadPath);
+    }
+
+    chdir(DownloadPath);
+
+    Status = system(WgetCommand);
     if (Status != 0)
     {
         printf("%s\n", n);
