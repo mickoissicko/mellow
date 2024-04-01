@@ -36,10 +36,19 @@ int main(int argc, char* argv[])
         return 0;
     }
 
-    else if (!strcmp(argv[1], "get-tmp"))
-    {
+    else if (
+        !strcmp(argv[1], "get-tmp")
+    ){
         char* Path = GetTempPath();
         printf("%s\n", Path);
+    }
+
+    else if (
+        !strcmp(argv[1], "rm-cache")
+    ){
+        char* DownloadDir = GetDownloadDir();
+        DeleteTemp();
+        RemoveDownloads(DownloadDir);
     }
 
     return 0;
