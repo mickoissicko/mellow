@@ -23,6 +23,18 @@ int main(int argc, char* argv[])
     }
 
     else if (
+        !strcmp(argv[1], "download")
+    ){
+        if (argc < 3)
+            exit(1);
+
+        strcpy(Name, argv[2]);
+
+        PackageDownloader(Name);
+        return 0;
+    }
+
+    else if (
         !strcmp(argv[1], "--aur")        ||
         !strcmp(argv[1], "--aur-nc")     ||
         !strcmp(argv[1], "--aur-ng")     ||
