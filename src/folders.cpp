@@ -7,6 +7,6 @@ void MakeFolder(char* path)
 
 void RemoveDownloads(char* path)
 {
-    std::filesystem::remove(path);
+    std::filesystem::remove_all(path);
 }
 
