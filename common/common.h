@@ -16,6 +16,7 @@ int AurHelper(int argc, char** argv);
 void CreateTemp();
 void DeleteTemp();
 
+void PackageDownloader(const char* pkg);
 void RemoveDownloads(char* path);
 void MakeFolder(char* path);
 void Get(char* n, char* argv[]);
