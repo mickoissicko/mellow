@@ -50,6 +50,8 @@ void Get(char* n, char** argv)
     else if (strcmp(argv[1], "sync") == 0)
     {
         chdir(FormattedPath);
+        remove("index_mmgr");
+        remove("links_mmgr");
         system(UpdatePackagesIndex);
         system(UpdatePackagesLink);
         exit(0);

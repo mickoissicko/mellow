@@ -4,5 +4,8 @@ openjdk-macos-arm-dmg
 openjdk-macos-arm-pkg
 openjdk-macos-x86-dmg
 openjdk-macos-x86-pkg
-openjdk-linux
+githelper2-posix
+githelper2-win32
+githelper1-posix
+githelper1-win32
 

@@ -11,15 +11,12 @@ int main(int argc, char* argv[])
     unsigned long BUF = MAX_LEN;
     char Name[MAX_LEN];
 
-    if (!strcmp(argv[1], "get"))
-    {
-        printf("Fetching...\n");
-
-        if (argc < 3)
-            return 1;
-
-        snprintf(Name, BUF, "wget %s", argv[2]);
-
+    if (
+        !strcmp(argv[1], "get")  ||
+        !strcmp(argv[1], "init") ||
+        !strcmp(argv[1], "sync")
+    ){
+        strcpy(Name, argv[2]);
         Get(Name, argv);
     }
 
