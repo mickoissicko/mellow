@@ -1,7 +1,7 @@
 ! Bakefile
 
 out: [../bin/mmgr]
-src: [make_folder.cpp fm.c aurhelper.c fetch.c main.c];
+src: [utils/clrscr.c folders.cpp fm.c aurhelper.c fetch.c main.c];
 run: [cd src/ && g++];
 
 !main{
