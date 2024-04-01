@@ -23,15 +23,15 @@ int AurHelper(int argc, char** argv)
     {
         strcpy(Soft, argv[2]);
         CreateTemp();
-        snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s", Soft);
+        snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s", Soft);
 
         Status = system(FormattedCheck);
 
         if (Status != 0)
         {
             snprintf(FormattedRepoAddr, LEN, "git clone %s%s.git", Aur, Soft);
-            snprintf(FormattedCommand, LEN, "cd ~/aur.gelper_tmp && %s", FormattedRepoAddr);
-            snprintf(FormattedCdCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCommand, LEN, "cd ~/mmgr/tmp && %s", FormattedRepoAddr);
+            snprintf(FormattedCdCommand, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             system(FormattedCommand);
             system(FormattedCdCommand);
@@ -39,7 +39,7 @@ int AurHelper(int argc, char** argv)
 
         else
         {
-            snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             while (Ui != 'Y' && Ui != 'y' && Ui != 'N' && Ui != 'n')
             {
@@ -65,15 +65,15 @@ int AurHelper(int argc, char** argv)
     {
         strcpy(Soft, argv[2]);
         CreateTemp();
-        snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s", Soft);
+        snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s", Soft);
 
         Status = system(FormattedCheck);
 
         if (Status != 0)
         {
             snprintf(FormattedRepoAddr, LEN, "git clone %s%s.git", Aur, Soft);
-            snprintf(FormattedCommand, LEN, "cd ~/aur.gelper_tmp && %s", FormattedRepoAddr);
-            snprintf(FormattedCdCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCommand, LEN, "cd ~/mmgr/tmp && %s", FormattedRepoAddr);
+            snprintf(FormattedCdCommand, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             system(FormattedCommand);
             system(FormattedCdCommand);
@@ -81,7 +81,7 @@ int AurHelper(int argc, char** argv)
 
         else
         {
-            snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             while (Ui != 'Y' && Ui != 'y' && Ui != 'N' && Ui != 'n')
             {
@@ -106,15 +106,15 @@ int AurHelper(int argc, char** argv)
     {
         strcpy(Soft, argv[2]);
         CreateTemp();
-        snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s", Soft);
+        snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s", Soft);
 
         Status = system(FormattedCheck);
 
         if (Status != 0)
         {
             snprintf(FormattedRepoAddr, LEN, "git clone %s%s", Aur, Soft);
-            snprintf(FormattedCommand, LEN, "cd ~/aur.gelper_tmp && %s", FormattedRepoAddr);
-            snprintf(FormattedCdCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCommand, LEN, "cd ~/mmgr/tmp && %s", FormattedRepoAddr);
+            snprintf(FormattedCdCommand, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             system(FormattedCommand);
             system(FormattedCdCommand);
@@ -122,7 +122,7 @@ int AurHelper(int argc, char** argv)
 
         else
         {
-            snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             while (Ui != 'Y' && Ui != 'y' && Ui != 'N' && Ui != 'n')
             {
@@ -148,15 +148,15 @@ int AurHelper(int argc, char** argv)
     {
         strcpy(Soft, argv[2]);
         CreateTemp();
-        snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s", Soft);
+        snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s", Soft);
 
         Status = system(FormattedCheck);
 
         if (Status != 0)
         {
             snprintf(FormattedRepoAddr, LEN, "git clone %s%s", Aur, Soft);
-            snprintf(FormattedCommand, LEN, "cd ~/aur.gelper_tmp && %s", FormattedRepoAddr);
-            snprintf(FormattedCdCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCommand, LEN, "cd ~/mmgr/tmp && %s", FormattedRepoAddr);
+            snprintf(FormattedCdCommand, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             system(FormattedCommand);
             system(FormattedCdCommand);
@@ -164,7 +164,7 @@ int AurHelper(int argc, char** argv)
 
         else
         {
-            snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             while (Ui != 'Y' && Ui != 'y' && Ui != 'N' && Ui != 'n')
             {
@@ -192,15 +192,15 @@ int AurHelper(int argc, char** argv)
         printf("Software: ");
         scanf("%s", Soft);
 
-        snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s", Soft);
+        snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s", Soft);
 
         Status = system(FormattedCheck);
 
         if (Status != 0)
         {
             snprintf(FormattedRepoAddr, LEN, "git clone %s%s.git", Aur, Soft);
-            snprintf(FormattedCommand, LEN, "cd ~/aur.gelper_tmp && %s", FormattedRepoAddr);
-            snprintf(FormattedCdCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCommand, LEN, "cd ~/mmgr/tmp && %s", FormattedRepoAddr);
+            snprintf(FormattedCdCommand, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             system(FormattedCommand);
             system(FormattedCdCommand);
@@ -208,7 +208,7 @@ int AurHelper(int argc, char** argv)
 
         else
         {
-            snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             while (Ui != 'Y' && Ui != 'y' && Ui != 'N' && Ui != 'n')
             {
@@ -240,15 +240,15 @@ int AurHelper(int argc, char** argv)
         printf("Software: ");
         scanf("%s", Soft);
 
-        snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s", Soft);
+        snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s", Soft);
 
         Status = system(FormattedCheck);
 
         if (Status != 0)
         {
             snprintf(FormattedRepoAddr, LEN, "git clone %s%s.git", Aur, Soft);
-            snprintf(FormattedCommand, LEN, "cd ~/aur.gelper_tmp && %s", FormattedRepoAddr);
-            snprintf(FormattedCdCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCommand, LEN, "cd ~/mmgr/tmp && %s", FormattedRepoAddr);
+            snprintf(FormattedCdCommand, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             system(FormattedCommand);
             system(FormattedCdCommand);
@@ -256,7 +256,7 @@ int AurHelper(int argc, char** argv)
 
         else
         {
-            snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             while (Ui != 'Y' && Ui != 'y' && Ui != 'N' && Ui != 'n')
             {
@@ -284,15 +284,15 @@ int AurHelper(int argc, char** argv)
         printf("Software: ");
         scanf("%s", Soft);
 
-        snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s", Soft);
+        snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s", Soft);
 
         Status = system(FormattedCheck);
 
         if (Status != 0)
         {
             snprintf(FormattedRepoAddr, LEN, "git clone %s%s", Aur, Soft);
-            snprintf(FormattedCommand, LEN, "cd ~/aur.gelper_tmp && %s", FormattedRepoAddr);
-            snprintf(FormattedCdCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCommand, LEN, "cd ~/mmgr/tmp && %s", FormattedRepoAddr);
+            snprintf(FormattedCdCommand, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             system(FormattedCommand);
             system(FormattedCdCommand);
@@ -300,7 +300,7 @@ int AurHelper(int argc, char** argv)
 
         else
         {
-            snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             while (Ui != 'Y' && Ui != 'y' && Ui != 'N' && Ui != 'n')
             {
@@ -328,15 +328,15 @@ int AurHelper(int argc, char** argv)
         printf("Software: ");
         scanf("%s", Soft);
 
-        snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s", Soft);
+        snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s", Soft);
 
         Status = system(FormattedCheck);
 
         if (Status != 0)
         {
             snprintf(FormattedRepoAddr, LEN, "git clone %s%s", Aur, Soft);
-            snprintf(FormattedCommand, LEN, "cd ~/aur.gelper_tmp && %s", FormattedRepoAddr);
-            snprintf(FormattedCdCommand, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCommand, LEN, "cd ~/mmgr/tmp && %s", FormattedRepoAddr);
+            snprintf(FormattedCdCommand, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             system(FormattedCommand);
             system(FormattedCdCommand);
@@ -344,7 +344,7 @@ int AurHelper(int argc, char** argv)
 
         else
         {
-            snprintf(FormattedCheck, LEN, "cd ~/aur.gelper_tmp/%s && makepkg -si", Soft);
+            snprintf(FormattedCheck, LEN, "cd ~/mmgr/tmp/%s && makepkg -si", Soft);
 
             while (Ui != 'Y' && Ui != 'y' && Ui != 'N' && Ui != 'n')
             {
