@@ -16,9 +16,13 @@ int AurHelper(int argc, char** argv);
 void CreateTemp();
 void DeleteTemp();
 
+void RemoveDownloads(char* path);
 void MakeFolder(char* path);
 void Get(char* n, char* argv[]);
 
+void clrscr();
+
+char* GetDownloadDir();
 char* GetTempPath();
 static char* Win32_Path();
 static char* Posix_Path();
