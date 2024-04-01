@@ -55,6 +55,8 @@ void Get(char* n, char** argv)
         remove("links_mmgr");
         system(UpdatePackagesIndex);
         system(UpdatePackagesLink);
+        clrscr();
+        printf("!sucess");
         exit(0);
     }
 
@@ -137,11 +139,20 @@ void Get(char* n, char** argv)
     {
         printf("%s\n", n);
 
+        clrscr();
+
+        if (Status != 0)
+        {
+            printf("Unable to clear console!\n%s", stderr);
+            exit(1);
+        }
+
         printf("There was an unexpected error\n");
         printf("Do you have 'wget' installed?\n");
         exit(1);
     }
 
-    
+    clrscr();
+    printf("!sucess");
 }
 
