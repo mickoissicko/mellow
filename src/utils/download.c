@@ -12,7 +12,7 @@ void PackageDownloader(const char* pkg)
 
     unsigned long Buf = MAX_LEN;
 
-    const static char PackageIndex[] = 
+    const static char PackageIndex[] =
         "https://raw.githubusercontent.com/mickoissicko/mixmgr/main/packages/index_mmgr";
     const static char PackageLinks[] =
         "https://raw.githubusercontent.com/mickoissicko/mixmgr/main/packages/links_mmgr";
