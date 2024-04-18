@@ -1,7 +1,7 @@
 ! Bakefile
 
 out: [../bin/mmgr]
-src: [main.c help.c];
+src: [main.c help.c prepare.cpp install.c];
 run: [cd src/ && g++];
 
 !main{
