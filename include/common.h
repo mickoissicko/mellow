@@ -8,5 +8,7 @@
 const static char MMGR[] = ".mix/mmgr";
 const static char MIX[] = ".mix";
 
+void Prepare();
+void Install();
 void Help();
 

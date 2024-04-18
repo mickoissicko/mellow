@@ -28,7 +28,7 @@ void Prepare()
         exit(1);
     }
 
-    else if (chdir(MMGR) != 0 )
+    else if (chdir("mmgr") != 0)
     {
         std::cout << "Permission denied or other error" << '\n';
         std::cout << "Please manually create '.mix/mmgr' directory" << '\n';
@@ -37,14 +37,7 @@ void Prepare()
         exit(1);
     }
 
-    chdir(MMGR);
-    #ifdef _WIN32
-        system("installer.bat");
-    #else
-        system("chmod +x installer.sh");
-        system("./installer.sh");
-    #endif
-
+    chdir(Path);
     free(Path);
 }
 

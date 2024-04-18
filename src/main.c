@@ -29,8 +29,8 @@ int main(int argc, char* argv[])
     else if (
         !strcmp(argv[1], "/install")
     ){
-        printf("Downloading scripts...\n");
-        printf("Installing...\n");
+        printf("Preparing...\n");
+        Install();
     }
 
     return 0;
