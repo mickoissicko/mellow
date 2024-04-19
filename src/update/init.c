@@ -2,6 +2,7 @@
 #include "../../include/links.h"
 #include "../../lib/gethome.h"
 
+#include <unistd.h>
 #include <stdio.h>
 
 void Init()
