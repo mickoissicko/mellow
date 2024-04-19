@@ -33,6 +33,22 @@ int main(int argc, char* argv[])
         Install();
     }
 
+    else if (
+        !strcmp(argv[1], "/download")
+    ){
+        if (argc < 3)
+        {
+            printf("No program?\n");
+            printf("View the program repository at the MMGR repo list\n");
+            printf("You can also download the list via /download mmgr_repo_list\n");
+            printf("The list can be seen at: https://mick.gdn/software/mmgr/list\n");
+
+            exit(1);
+        }
+
+        Downloader(argv);
+    }
+
     return 0;
 }
 
