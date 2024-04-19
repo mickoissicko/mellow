@@ -19,11 +19,13 @@ void Init()
 
     FILE* Index;
     FILE* Links;
+    FILE* Lock;
 
     Index = fopen(INDEX, "r");
     Links = fopen(LINKS, "r");
+    Lock = fopen(LOCKFILE, "r");
 
-    if (Index != NULL || Links != NULL)
+    if (Index != NULL || Links != NULL || Lock != NULL)
     {
         printf("Already initialised\n");
         printf("Run '/sync' if you wanted to update\n");
