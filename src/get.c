@@ -1,4 +1,5 @@
 #include "../include/common.h"
+#include "../lib/gethome.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -6,17 +7,20 @@
 
 void Get(const char* Pkg)
 {
+    char* Path = gethome();
+    chdir(Path);
+
+    if (chdir(MMGR) != 0)
+    {
+        printf("Error changing directory\n");
+        exit(1);
+    }
+
     FILE* Indexfile;
     FILE* Linksfile;
 
     Indexfile = fopen(INDEX, "r");
     Linksfile = fopen(LINKS, "r");
-
-    if (Indexfile == NULL || Linksfile == NULL)
-    {
-        printf("Please run with /init first\n");
-        exit(1);
-    }
 
     int LinePosition = 1;
     int Found = 0;
