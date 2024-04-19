@@ -55,5 +55,18 @@ void Install()
 
         exit(Stat);
     }
+
+    FILE* lock;
+    lock = fopen("lock.pa", "w");
+
+    if (lock == NULL)
+    {
+        printf("Err creating lockfile\n");
+        printf("Manually create it, then set the program up\n");
+        exit(1);
+    }
+
+    else
+        fclose(lock);
 }
 
