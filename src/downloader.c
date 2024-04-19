@@ -29,9 +29,6 @@ void Downloader(char* Flag[])
     }
 
     for (int i = 1; Flag[i] != NULL; ++i)
-    {
-        char* Program = MatchName(Flag[i]);
-        Wget(Program);
-    }
+        Get(Flag[i]);
 }
 
