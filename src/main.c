@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
     }
 
     else if (
-        !strcmp(argv[1], "/install")
+        !strcmp(argv[1], "/setup")
     ){
         printf("Preparing...\n");
         Install();
