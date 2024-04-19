@@ -64,6 +64,15 @@ int main(int argc, char* argv[])
         Sync();
     }
 
+    else if (
+        !strcmp(argv[1], "/reset")
+    ){
+        printf("Resetting...\n");
+        printf("NOTE: the '.mix' folder will not be deleted\n");
+
+        Reset();
+    }
+
     return 0;
 }
 
