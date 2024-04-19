@@ -28,7 +28,10 @@ void Downloader(char* Flag[])
         }
     }
 
-    for (int i = 1; Flag[i] != NULL; ++i)
+    for (int i = 2; Flag[i] != NULL;)
+    {
         Get(Flag[i]);
+        i++;
+    }
 }
 
