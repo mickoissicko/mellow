@@ -1,7 +1,7 @@
 ! Bakefile
 
 out: [../bin/mmgr]
-src: [update/sync.c update/init.c get.c downloader.c main.c help.c prepare.cpp install.c wget.c];
+src: [reset.cpp update/sync.c update/init.c get.c downloader.c main.c help.c prepare.cpp install.c wget.c];
 run: [cd src/ && clang++];
 
 !main{
