@@ -23,18 +23,33 @@ void Init()
 
     Index = fopen(INDEX, "r");
     Links = fopen(LINKS, "r");
-    Lock = fopen(LOCKFILE, "r");
 
-    if (Index != NULL || Links != NULL || Lock != NULL)
+    if (Index != NULL || Links != NULL)
     {
         printf("Already initialised\n");
         printf("Run '/sync' if you wanted to update\n");
 
+        fclose(Index);
+        fclose(Links);
+
         exit(0);
     }
 
-    Wget(INDEX_MSX);
-    Wget(LINKS_MSX);
+    Lock = fopen(LOCKFILE, "r");
+
+    if (Lock != NULL)
+    {
+        Wget(INDEX_MSX);
+        Wget(LINKS_MSX);
+
+        fclose(Lock);
+    }
+
+    else
+    {
+        printf("Please run '/setup' first\n");
+        exit(1);
+    }
 
     free(Path);
 }
