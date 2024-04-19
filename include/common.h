@@ -17,6 +17,7 @@ int Wget(const char pkg[MAX_BUF + TERM_SIZ]);
 void Downloader(char* argv[]);
 void Prepare();
 void Install();
+void Reset();
 void Init();
 void Sync();
 void Help();
