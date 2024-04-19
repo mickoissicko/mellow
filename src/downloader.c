@@ -17,16 +17,21 @@ void Downloader(char* Flag[])
         exit(1);
     }
 
-    char* UnfilteredLink = MatchName(Flag);
-
-    if (!strcmp(UnfilteredLink, "NULL"))
+    else if(chdir(MMGR) != 0)
     {
-        printf("There was an error\n");
-        printf("See manual for more info at https://mick.gdn/wiki/mmgr\n");
+        Prepare();
 
-        exit(1);
+        if (chdir(MMGR) != 0)
+        {
+            printf("Unprecedented fault\n");
+            exit(1);
+        }
     }
 
-    Wget(UnfilteredLink);
+    for (int i = 1; Flag[i] != NULL; ++i)
+    {
+        char* Program = MatchName(Flag[i]);
+        Wget(Program);
+    }
 }
 
