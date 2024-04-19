@@ -11,7 +11,10 @@ const static char MIX[] = ".mix";
 
 int Wget(char src[MAX_BUF + TERM_SIZ]);
 
+void Downloader(char* argv[]);
 void Prepare();
 void Install();
 void Help();
+
+char* MatchName(char* argv[]);
 
