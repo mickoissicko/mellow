@@ -6,15 +6,17 @@
 #define MAX_SIZ 8192
 #define MAX_BUF 4096
 
+const static char INDEX[] = "index.msx";
+const static char LINKS[] = "links.msx";
 const static char MMGR[] = ".mix/mmgr";
 const static char MIX[] = ".mix";
 
-int Wget(char src[MAX_BUF + TERM_SIZ]);
+int Wget(const char pkg[MAX_BUF + TERM_SIZ]);
 
 void Downloader(char* argv[]);
 void Prepare();
 void Install();
 void Help();
 
-char* MatchName(char* argv[]);
+char* MatchName(const char* src);
 
