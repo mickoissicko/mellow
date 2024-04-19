@@ -49,6 +49,21 @@ int main(int argc, char* argv[])
         Downloader(argv);
     }
 
+    else if (
+        !strcmp(argv[1], "/init")
+    ){
+        printf("Fetching...\n");
+        Init();
+    }
+
+    else if (
+        !strcmp(argv[1], "/sync")
+    ){
+        printf("Synchronising database...\n");
+        printf("Connecting...\n");
+        Sync();
+    }
+
     return 0;
 }
 
