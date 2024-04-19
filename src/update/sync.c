@@ -7,6 +7,17 @@
 
 void Sync()
 {
+    char* Path = gethome();
+    chdir(Path);
+
+    if (chdir(MMGR) != 0)
+    {
+        printf("There was an error\n");
+        printf("Try running '/setup' first\n");
+
+        exit(1);
+    }
+
     FILE* Lock;
 
     Lock = fopen(LOCKFILE, "r");
@@ -16,9 +27,6 @@ void Sync()
         printf("Run '/setup' first!\n");
         exit(1);
     }
-
-    char* Path = gethome();
-    chdir(Path);
 
     FILE* Index;
     FILE* Links;
@@ -32,7 +40,7 @@ void Sync()
         remove(INDEX);
     }
 
-    else if (Links != NULL)
+    if (Links != NULL)
     {
         fclose(Links);
         remove(LINKS);
