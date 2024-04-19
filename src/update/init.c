@@ -9,7 +9,7 @@ void Init()
     char* Path = gethome();
     chdir(Path);
 
-    if (chdir(MIX) != 0 || chdir(MMGR) != 0)
+    if (chdir(MMGR) != 0)
     {
         printf("There was an error\n");
         printf("Try running '/setup' first\n");
