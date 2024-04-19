@@ -6,6 +6,7 @@
 #define MAX_SIZ 8192
 #define MAX_BUF 4096
 
+const static char LOCKFILE[] = "lock.pa";
 const static char INDEX[] = "index.msx";
 const static char LINKS[] = "links.msx";
 const static char MMGR[] = ".mix/mmgr";
