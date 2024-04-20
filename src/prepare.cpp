@@ -41,3 +41,37 @@ void Prepare()
     free(Path);
 }
 
+void MakeAURFolder()
+{
+    char* Path = gethome();
+
+    chdir(Path);
+
+    if (chdir(MMGR) != 0)
+    {
+        std::cout << "Run /init or /setup first" << '\n';
+        exit(1);
+    }
+
+    if (!std::filesystem::exists(AUR_PATH))
+        std::filesystem::create_directories(AUR_PATH);
+}
+
+void CleanAURFolder()
+{
+    char* Path = gethome();
+
+    chdir(Path);
+
+    if (chdir(MMGR) != 0)
+    {
+        std::cout << "Run /init or /setup first" << '\n';
+        exit(1);
+    }
+
+    char Command[MAX_BUF];
+
+    snprintf(Command, MAX_BUF, "rm -rf %s", AUR_PATH);
+    system(Command);
+}
+
