@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
     }
 
     else if (
-        !strcmp(argv[1], "/download")
+        !strcmp(argv[1], "/get")
     ){
         if (argc < 3)
         {
