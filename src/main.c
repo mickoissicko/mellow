@@ -12,18 +12,18 @@ int main(int argc, char* argv[])
     printf("Loading...\n");
 
     if (
-        !strcmp(argv[1], "/aur")
+        !strcmp(argv[1], "/aur") ||
+        !strcmp(argv[2], "--rebuild")
     ){
-        if (argv[2] == NULL)
-        {
-            printf("You need to supply software name\n");
+        if (
+            !strcmp(argv[1], "/aur") && argv[2] == NULL ||
+            !strcmp(argv[2], "--nc") && argv[3] == NULL
+        ){
+            printf("No software was named\n");
             exit(1);
         }
 
-        char* Command;
-        unsigned long Buf = {MAX_BUF};
-
-        snprintf(Command, Buf, "");
+        AURHelper(argv);
     }
 
     else if (
