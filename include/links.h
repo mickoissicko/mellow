@@ -8,6 +8,12 @@ const static char SHELL_SCRIPT[] =
 const static char BATCH_SCRIPT[] =
     "https://raw.githubusercontent.com/mickoissicko/mixmgr/main/pkgs/scripts/installer.bat";
 
+const static char GET_GIT_SH[] =
+    "https://raw.githubusercontent.com/mickoissicko/mixmgr/main/pkgs/scripts/getgit.sh";
+
+const static char GET_GIT_BAT[] =
+    "https://raw.githubusercontent.com/mickoissicko/mixmgr/main/pkgs/scripts/getgit.bat";
+
 const static char INDEX_MSX[] =
     "https://raw.githubusercontent.com/mickoissicko/mixmgr/main/pkgs/links/index.msx";
 
