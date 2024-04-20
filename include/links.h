@@ -20,3 +20,6 @@ const static char INDEX_MSX[] =
 const static char LINKS_MSX[] =
     "https://raw.githubusercontent.com/mickoissicko/mixmgr/main/pkgs/links/links.msx";
 
+const static char AUR_LINK[] =
+    "https://aur.archlinux.org";
+
