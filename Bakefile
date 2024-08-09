@@ -1,2 +1,12 @@
+run: [cd src/ && gcc];
+src: [main.c];
+out: [../bin/mellow];
 
+!main{
+    >[run] -o [out] [src];
+    >cd ..;
+}
 
+!serve{
+    >echo 'done';
+}
