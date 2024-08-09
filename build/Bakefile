@@ -1,0 +1,14 @@
+src: [];
+run: [];
+out: [build/bin/app];
+
+!main{
+    >cd ..;
+    >[run] -o [out] [src];
+    >cd build;
+}
+
+!serve{
+    >echo 'done!';
+}
+
