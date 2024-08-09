@@ -1,1 +1,3 @@
-will update later
+# Mellow
+An AUR helper.
+
