@@ -6,10 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Mellow - Manual</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/backbutton.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-<a href="../index.html">&lt;--</a>
+<script>
+    function goBack(){
+        window.history.back();
+    }
+</script>
+<a href="javascript:(0);" class="back-button" onclick="goBack()">
+    <span class="label">back</span>
+</a>
 <br>
 <center><pre class="white">
                                                            ████ 
