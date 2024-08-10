@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
-var fs = require('fs');
 
+var fs = require('fs');
 var filePath = path.join(__dirname, '../execute/cmd.txt');
 
 function createWindow(){
