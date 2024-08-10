@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron');
+const ipcRenderer = require('electron');
 
 function consoleListener(){
     document.addEventListener('keypress', function (e){
@@ -30,8 +30,11 @@ function consoleListener(){
 function aurListener(){
     document.addEventListener('DOMContentLoaded', function (){
         let installBtn = document.getElementById('install-button');
+        let webviewTag = document.getElementById('aur-embed');
+
         installBtn.addEventListener('click', () => {
-            console.log('Detected click');
+            const url = webviewTag;
+            console.log(url);
         })
     })
 } aurListener();
