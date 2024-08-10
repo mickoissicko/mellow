@@ -2,6 +2,8 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 var fs = require('fs');
 
+var filePath = path.join(__dirname, '../execute');
+
 function createWindow(){
     const win = new BrowserWindow({
         width: 1200,
@@ -22,7 +24,7 @@ app.whenReady().then(() =>
 );
 
 ipcMain.on('saveText', (event, text) => {
-    fs.writeFile('cmds.txt', text, (err) => {
+    fs.writeFile(filePath, text, (err) => {
         if (err)
             console.log(err);
     });
