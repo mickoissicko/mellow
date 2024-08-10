@@ -1,11 +1,11 @@
 const { ipcRenderer } = require('electron');
 
-function listener() {
-    document.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
+function consoleListener(){
+    document.addEventListener('keypress', function (e){
+        if (e.key === 'Enter'){
             let txtBox = document.getElementById('userInput');
 
-            if (document.activeElement === txtBox) {
+            if (document.activeElement === txtBox){
                 const userInput = document.getElementById('userInput');
                 const output = document.getElementById('output');
                 const command = userInput.value.trim();
@@ -25,7 +25,14 @@ function listener() {
 
         document.getElementById('userInput').addEventListener('keydown', handleInput);
     });
-}
+} consoleListener();
 
-listener();
+function aurListener(){
+    document.addEventListener('DOMContentLoaded', function (){
+        let installBtn = document.getElementById('install-button');
+        installBtn.addEventListener('click', () => {
+            console.log('Detected click');
+        })
+    })
+} aurListener();
 
