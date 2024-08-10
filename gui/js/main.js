@@ -12,6 +12,7 @@ function createWindow(){
             nodeIntegrationInWorker: true,
             contextIsolation: true,
             nodeIntegration: true,
+            webviewTag: true,
             preload: path.join(__dirname, 'preload.js'),
         }
     })
