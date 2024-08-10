@@ -1,0 +1,29 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.webview-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    width: 100%;
+}
+
+webview {
+    width: 910px;
+    height: 610px;
+}
+
+.buttons-container {
+    text-align: center;
+}
+
+.back-button {
+    display: inline-block;
+    margin: 10px;
+}
+
