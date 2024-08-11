@@ -60,7 +60,7 @@ void MkTmp()
         std::cin >> Ui;
 
         if (Ui == 'y' || Ui == 'Y')
-            Fs::remove(".tmp");
+            Fs::remove_all(".tmp");
 
         else
             return;
