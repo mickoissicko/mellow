@@ -1,4 +1,4 @@
-const ipcRenderer = require('electron');
+const { ipcRenderer } = require('electron');
 
 function consoleListener(){
     document.addEventListener('keypress', function (e){
