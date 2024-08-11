@@ -21,15 +21,13 @@ int main(int argc, char* argv[])
         printf("Searching for '%s'...\n", argv[2]);
 
         char* Home = gethome();
-        chdir(Home);
+        MkTmp();
 
-        MkTmp(Home);
         if(
-            chdir(Home)          != 0 ||
-            chdir(".mix/mellow") != 0 ||
-            chdir(".tmp")        != 0
+            chdir(Home)               != 0 ||
+            chdir(".mix/mellow/.tmp") != 0
         ){
-            perror("Error changing directory ");
+            perror("c: Error changing directory");
             exit(1);
         }
 
