@@ -43,6 +43,9 @@ void MkTmp(char Path[])
     }
 
     if (!Fs::exists(".tmp"))
+        Fs::create_directory(".tmp");
+
+    else if (Fs::exists(".tmp"))
     {
         std::cout << "Remove temp folder? [y/n]" << '\n';
         std::cin >> Ui;
@@ -51,7 +54,7 @@ void MkTmp(char Path[])
             Fs::remove_all(".tmp");
 
         else
-            exit(0);
+            return;
     }
 }
 
