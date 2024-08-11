@@ -17,7 +17,7 @@ int Scraper(char* PackageName)
     CURL* Handle;
     char Buf[8192];
 
-    static const char* Filename = "file.out";
+    static const char* Filename = "results.txt";
     
     curl_global_init(CURL_GLOBAL_ALL);
     Handle = curl_easy_init();
@@ -43,6 +43,7 @@ int Scraper(char* PackageName)
     curl_global_cleanup();
 
     PrettyPrinter();
+    FiltreResults();
     return 0;
 }
 
