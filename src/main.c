@@ -21,6 +21,7 @@ int main(int argc, char* argv[])
         printf("Searching for '%s'...\n", argv[2]);
 
         char* Home = gethome();
+        char Buf[8192];
         MkTmp();
 
         if(
@@ -31,8 +32,14 @@ int main(int argc, char* argv[])
             exit(1);
         }
 
+        snprintf(Buf, sizeof(Buf), "%s/.mix/mellow/.tmp", Home);
+
         Scraper(argv[2]);
+        DisplayResults(Buf);
     }
+
+    else if (strcasecmp(argv[1], "-Sc") == 0)
+        DelTmp();
 
     return 0;
 }
