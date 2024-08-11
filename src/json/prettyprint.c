@@ -12,7 +12,7 @@ int PrettyPrinter()
     char* PrettyJSONStr;
     char* Ln = NULL;
 
-    Input = fopen("file.out", "r");
+    Input = fopen("results.txt", "r");
 
     getline(&Ln, &Siz, Input);
     fclose(Input);
@@ -74,14 +74,7 @@ int PrettyPrinter()
         }
     }
 
-
-    while ((Ptr = strstr(PrettyJSONStr, "\"")) != NULL)
-    {
-        *Ptr = ' ';
-        Ptr++;
-    }
-
-    Output = fopen("file.out", "w");
+    Output = fopen("results.txt", "w");
     fprintf(Output, "%s", PrettyJSONStr);
     fclose(Output);
 
