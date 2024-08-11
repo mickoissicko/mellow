@@ -25,7 +25,7 @@ for SrcFile in "$SrcFolder"/scraper/*.c; do
 
     Out="${ObjFolder}/${Base}.o"
 
-    gcc -c "$SrcFile" -o "$Out"
+    gcc -c "$SrcFile" -o "$Out" -lcurl
 done
 
 for SrcFile in "$SrcFolder"/json/*.c; do
@@ -35,4 +35,8 @@ for SrcFile in "$SrcFolder"/json/*.c; do
 
     gcc -c "$SrcFile" -o "$Out"
 done
+
+# final command
+# compile o -> exe
+g++ "$ObjFolder"/*.o -lcurl -o "$BinFolder"/mellow
 
