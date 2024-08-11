@@ -7,7 +7,7 @@
 extern "C"
 {
     void MkDirs();
-    void MkTmp(char Path[]);
+    void MkTmp();
 }
 
 namespace Fs = std::filesystem;
@@ -33,20 +33,23 @@ void MkDirs()
 
     if (!Fs::exists("mellow"))
         Fs::create_directory("mellow");
+
+    chdir(Path);
 }
 
-void MkTmp(char Path[])
+void MkTmp()
 {
+    char* Home = gethome();
     char Ui;
 
-    if (
-        chdir(Path)     != 0 &&
-        chdir(".mix")   != 0 &&
-        chdir("mellow") != 0
-    ){
-        std::cerr << "Error changing directory" << '\n';
+    if (chdir(Home) != 0)
+    {
+        std::cerr << "c++: Error changing directory" << '\n';
         exit(1);
     }
+
+    chdir(".mix");
+    chdir("mellow");
 
     if (!Fs::exists(".tmp"))
         Fs::create_directory(".tmp");
@@ -57,7 +60,7 @@ void MkTmp(char Path[])
         std::cin >> Ui;
 
         if (Ui == 'y' || Ui == 'Y')
-            Fs::remove_all(".tmp");
+            Fs::remove(".tmp");
 
         else
             return;
