@@ -24,8 +24,11 @@ int main(int argc, char* argv[])
         chdir(Home);
 
         MkTmp(Home);
-        if(chdir(".tmp") != 0)
-        {
+        if(
+            chdir(Home)          != 0 ||
+            chdir(".mix/mellow") != 0 ||
+            chdir(".tmp")        != 0
+        ){
             perror("Error changing directory ");
             exit(1);
         }
