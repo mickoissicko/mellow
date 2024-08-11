@@ -32,8 +32,6 @@ int main(int argc, char* argv[])
         }
 
         Scraper(argv[2]);
-        PrettyPrinter();
-        FiltreResults();
     }
 
     return 0;
