@@ -6,6 +6,7 @@
 
 extern "C"
 {
+    void DelTmp();
     void MkDirs();
     void MkTmp();
 }
@@ -68,5 +69,25 @@ void MkTmp()
         else
             return;
     }
+}
+
+void DelTmp()
+{
+    char* Home = gethome();
+
+    if (chdir(Home) != 0)
+    {
+        std::cerr << "del.c++: Error changing directory" << '\n';
+        exit(1);
+    }
+
+    chdir(".mix");
+    chdir("mellow");
+
+    if (Fs::exists(".tmp"))
+        Fs::remove_all(".tmp");
+
+    else
+        std::cout << "There is nothing to remove" << '\n';
 }
 
