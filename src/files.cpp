@@ -60,7 +60,10 @@ void MkTmp()
         std::cin >> Ui;
 
         if (Ui == 'y' || Ui == 'Y')
+        {
             Fs::remove_all(".tmp");
+            Fs::create_directory(".tmp");
+        }
 
         else
             return;
