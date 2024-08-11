@@ -24,7 +24,15 @@ int main(int argc, char* argv[])
         chdir(Home);
 
         MkTmp(Home);
+        if(chdir(".tmp") != 0)
+        {
+            perror("Error changing directory ");
+            exit(1);
+        }
+
         Scraper(argv[2]);
+        PrettyPrinter();
+        FiltreResults();
     }
 
     return 0;
