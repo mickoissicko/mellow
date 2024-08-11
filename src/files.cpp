@@ -4,6 +4,12 @@
 #include <iostream>
 #include <unistd.h>
 
+extern "C"
+{
+    void MkDirs();
+    void MkTmp(char Path[]);
+}
+
 namespace Fs = std::filesystem;
 
 void MkDirs()
