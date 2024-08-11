@@ -3,5 +3,7 @@
 #endif
 
 int Scraper(char* PackageName);
+void MkTmp(char Path[]);
 int PrettyPrinter();
+void MkDirs();
 
