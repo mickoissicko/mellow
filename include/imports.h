@@ -5,7 +5,7 @@
 int Scraper(char* PackageName);
 int PrettyPrinter();
 
-void MkTmp(char Path[]);
 void FiltreResults();
 void MkDirs();
+void MkTmp();
 
