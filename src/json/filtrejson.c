@@ -2,7 +2,26 @@
 #include <string.h>
 #include <stdio.h>
 
-const static char Name[] = "results.txt";
+void SplitText()
+{
+    FILE* Results = fopen("results.txt", "r");
+    FILE* Temp    = fopen("tmp.txt", "w");
+
+    char Buf[10000];
+
+    while (fgets(Buf, sizeof(Buf), Results))
+    {
+        if (strstr(Buf, "\"FirstSubmitted\"") != NULL)
+            for (char* Cursor = Buf; *Cursor; Cursor++)
+                if (*Cursor == ',')
+                    *Cursor = '\n';
+
+        fprintf(Temp, "%s", Buf);
+    }
+
+    fclose(Results);
+    fclose(Temp);
+}
 
 void FiltreResults()
 {
@@ -15,8 +34,10 @@ void FiltreResults()
     char Chars;
     char* End;
 
-    W_Results = fopen(".new.results.txt", "w");
-    R_Results = fopen("results.txt", "r");
+    SplitText();
+
+    W_Results = fopen("results.txt", "w");
+    R_Results = fopen("tmp.txt", "r");
     while (getc(R_Results) != EOF)
         Siz += 1;
 
@@ -49,7 +70,6 @@ void FiltreResults()
     fclose(W_Results);
     free(Ln);
 
-    remove("results.txt");
-    rename(".new.results.txt", "results.txt");
+    remove("tmp.txt");
 }
 
