@@ -1,73 +1,90 @@
-#include "../../include/imports.h"
-
+#include <unistd.h>
+#include <stdlib.h>
 #include <stdio.h>
 
-char* GetDesc()
+char* GetData(const int Val, const char File[], const char FilePath[])
 {
-    char* Desc;
+    int Siz = 100000;
+    int Index = 0;
+ 
+    char* Ln = malloc(Siz * sizeof(char));
+    FILE* Results;
 
-
-
-    return Desc;
-}
-
-char* GetUsr()
-{
-    char* Usr;
-    return Usr;
-}
-
-char* GetPkg()
-{
-    char* Pkg;
-    return Pkg;
-}
-
-char* GetVer()
-{
-    char* Ver;
-    return Ver;
-}
-
-char* GetFileData(int Value)
-{
-    char* Desc = GetDesc();
-    char* Usr  = GetUsr();
-    char* Pkg  = GetPkg();
-    char* Ver  = GetVer();
-
-
-
-    char* f_Desc = FormatFileData(Desc);
-    char* f_Usr  = FormatFileData(Usr);
-    char* f_Pkg  = FormatFileData(Pkg);
-    char* f_Ver  = FormatFileData(Ver);
-
-    switch (Value)
+    if (chdir(FilePath) != 0)
     {
-        case 1:
-            return Desc;
-            break;
-
-        case 2:
-            return Usr;
-            break;
-
-        case 3:
-            return Pkg;
-            break;
-
-        case 4:
-            return Ver;
-            break;
-
-        default:
-            // return error if value is out of bounds
-            return "int.val.outofbounds";
-            break;
+        perror("gd.c: Error changing directory");
+        exit(1);
     }
 
-    // return error if switch statement fails
-    return "switch.statement.fail";
+    Results = fopen(File, "r");
+
+    /////////////////////////////////////////////
+
+    while (Index != 14)
+    {
+        fgetc(Results);
+        Index++;
+    } Index = 0;
+
+    fgets(Ln, Siz, Results);
+
+    if (Val == 1)
+    {
+        fclose(Results);
+        return Ln;
+    }
+
+    /////////////////////////////////////////////
+
+    while (Index != 13)
+    {
+        fgetc(Results);
+        Index++;
+    } Index = 0;
+
+    fgets(Ln, Siz, Results);
+
+    if (Val == 2)
+    {
+        fclose(Results);
+        return Ln;
+    }
+
+    /////////////////////////////////////////////
+
+    while (Index != 7)
+    {
+        fgetc(Results);
+        Index++;
+    } Index = 0;
+
+    fgets(Ln, Siz, Results);
+
+    if (Val == 3)
+    {
+        fclose(Results);
+        return Ln;
+    }
+
+    /////////////////////////////////////////////
+
+    while (Index != 10)
+    {
+        fgetc(Results);
+        Index++;
+    } Index = 0;
+
+    fgets(Ln, Siz, Results);
+
+    if (Val == 4)
+    {
+        fclose(Results);
+        return Ln;
+    }
+
+    /////////////////////////////////////////////
+
+    free(Ln);
+    return "load.fail";
 }
 
