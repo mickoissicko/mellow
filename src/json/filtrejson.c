@@ -2,9 +2,9 @@
 #include <string.h>
 #include <stdio.h>
 
-const char Name[] = "results.txt";
+const static char Name[] = "results.txt";
 
-void FiltreResults()
+static void FiltreResults()
 {
     char* FiltredStr;
     FILE* R_Results;
