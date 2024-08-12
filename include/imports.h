@@ -2,13 +2,16 @@
     #define IMPORTS_H
 #endif
 
-int Scraper(char* PackageName);
-int PrettyPrinter();
-
-void FormatFile(const char File[], const char FilePath[]);
+void StripNewlines(const char File[], const char FilePath[]);
 void DisplayResults(const char FilePath[]);
 void FiltreResults();
 void DelTmp();
 void MkDirs();
 void MkTmp();
+
+char* FormatFileData(const char Data[]);
+char* GetFileData(const int Value);
+
+int Scraper(char* PackageName);
+int PrettyPrinter();
 
