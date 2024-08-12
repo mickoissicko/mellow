@@ -22,7 +22,6 @@ int PrettyPrinter()
     free(Ln);
 
     char* Ptr = PrettyJSONStr; // ptr for later
-                               // i also apologise for what you are about to see
 
     while ((Ptr = strchr(Ptr, '{')) != NULL)
     {
@@ -54,24 +53,15 @@ int PrettyPrinter()
         Ptr4++;
     }
 
-    char Replacement = '\n';
-    char* Sub = "\",";
-
-    while ((Ptr = strstr(PrettyJSONStr, Sub)) != NULL)
+    char* SearchPos = PrettyJSONStr;
+    char* CommaPos;
+    
+    while ((CommaPos = strchr(SearchPos, ',')) != NULL)
     {
-        if (strstr(PrettyJSONStr, "\"Description:\""))   continue;
-        if (
-            strstr(PrettyJSONStr, "\"FirstSubmitted\":") ||
-            strstr(PrettyJSONStr, "\"LastModified\":")   ||
-            strstr(PrettyJSONStr, "\"resultcount\":")    ||
-            strstr(PrettyJSONStr, "\"ID\":")
-        ){
-            while ((Ptr = strstr(Ptr, ",")) != NULL)
-            {
-                *Ptr = '\n';
-                Ptr++;
-            }
-        }
+        if (CommaPos > PrettyJSONStr && *(CommaPos - 1) == '"')
+            *CommaPos = '\n';
+
+        SearchPos = CommaPos + 1;
     }
 
     Output = fopen("results.txt", "w");
@@ -79,10 +69,6 @@ int PrettyPrinter()
     fclose(Output);
 
     free(PrettyJSONStr);
-    free(Ptr4);
-    free(Ptr3);
-    free(Ptr2);
-    free(Ptr);
     return 0;
 }
 
