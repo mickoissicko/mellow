@@ -4,7 +4,7 @@
 
 const static char Name[] = "results.txt";
 
-static void FiltreResults()
+void FiltreResults()
 {
     char* FiltredStr;
     FILE* R_Results;
