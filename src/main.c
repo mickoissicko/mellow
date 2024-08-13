@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
         exit(1);
     }
 
-     if (strcasecmp(argv[1], "-Ss") == 0 && argc > 2)
+    if (strcasecmp(argv[1], "-Ss") == 0 && argc > 2)
     {
         printf("Searching for '%s'...\n", argv[2]);
 
@@ -41,34 +41,32 @@ int main(int argc, char* argv[])
     else if (strcasecmp(argv[1], "-Sc") == 0)
         DelTmp();
 
-    else if (strcasecmp(argv[1], "-S") == 0)
-    {
-        if (argc <= 2)
+    /*
+        else if (strcasecmp(argv[1], "-S") == 0)
         {
-            printf("Insufficient arguments\n");
-            exit(1);
+            if (argc <= 2)
+            {
+                printf("Insufficient arguments\n");
+                exit(1);
+            }
+
+            if (chdir(Home) != 0)
+            {
+                printf("sc: Error changing directory");
+                exit(1);
+            }
+
+            else if (chdir(".mix") != 0)
+                MkDirs(),
+                MkTmp();
+
+            chdir(".mix");
+            chdir("mellow");
+            chdir(".tmp");
+
+            // NOT IMPLEMENTED YET
         }
-
-        if (chdir(Home) != 0)
-        {
-            printf("sc: Error changing directory");
-            exit(1);
-        }
-
-        else if (chdir(".mix") != 0)
-            MkDirs(),
-            MkTmp();
-
-        chdir(".mix");
-        chdir("mellow");
-        chdir(".tmp");
-
-        char Buf[8192];
-        snprintf(Buf, sizeof(Buf), "%s/.mix/mellow/.tmp", Home);
-
-        Scraper(argv[2]);
-        DisplayResults(Buf);
-    }
+    */
 
     return 0;
 }
