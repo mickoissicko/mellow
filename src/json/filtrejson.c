@@ -2,6 +2,21 @@
 #include <string.h>
 #include <stdio.h>
 
+void RemoveQuotes(char* String)
+{
+    char* Dest = String;
+
+    while (*String != '\0')
+    {
+        if (*String != '"')
+            *Dest++ = *String;
+
+        String++;
+    }
+
+    *Dest = '\0';
+}
+
 void SplitText()
 {
     FILE* Results = fopen("results.txt", "r");
