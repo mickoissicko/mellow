@@ -4,7 +4,7 @@
 
 char* GetData(const int Val, const char File[], const char FilePath[])
 {
-    int Siz = 100000;
+    int Siz = 8192;
     int Index = 0;
  
     char* Ln = malloc(Siz * sizeof(char));
