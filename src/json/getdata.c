@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char* GetData(const int Val, const char File[], const char FilePath[])
+char* GetData(const int VAL, const char FILENAME[], const char FILEPATH[])
 {
     int Siz = 8192;
     int Index = 0;
@@ -10,13 +10,13 @@ char* GetData(const int Val, const char File[], const char FilePath[])
     char* Ln = malloc(Siz * sizeof(char));
     FILE* Results;
 
-    if (chdir(FilePath) != 0)
+    if (chdir(FILEPATH) != 0)
     {
         perror("gd.c: Error changing directory");
         exit(1);
     }
 
-    Results = fopen(File, "r");
+    Results = fopen(FILENAME, "r");
 
     /////////////////////////////////////////////
 
@@ -28,7 +28,7 @@ char* GetData(const int Val, const char File[], const char FilePath[])
 
     fgets(Ln, Siz, Results);
 
-    if (Val == 1)
+    if (VAL == 1)
     {
         fclose(Results);
         return Ln;
@@ -44,7 +44,7 @@ char* GetData(const int Val, const char File[], const char FilePath[])
 
     fgets(Ln, Siz, Results);
 
-    if (Val == 2)
+    if (VAL == 2)
     {
         fclose(Results);
         return Ln;
@@ -60,7 +60,7 @@ char* GetData(const int Val, const char File[], const char FilePath[])
 
     fgets(Ln, Siz, Results);
 
-    if (Val == 3)
+    if (VAL == 3)
     {
         fclose(Results);
         return Ln;
@@ -76,7 +76,7 @@ char* GetData(const int Val, const char File[], const char FilePath[])
 
     fgets(Ln, Siz, Results);
 
-    if (Val == 4)
+    if (VAL == 4)
     {
         fclose(Results);
         return Ln;
