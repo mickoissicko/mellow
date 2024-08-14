@@ -41,32 +41,47 @@ int main(int argc, char* argv[])
     else if (strcasecmp(argv[1], "-Sc") == 0)
         DelTmp();
 
-    /*
-        else if (strcasecmp(argv[1], "-S") == 0)
+    else if (strcasecmp(argv[1], "-S") == 0)
+    {
+        if (argc <= 2)
         {
-            if (argc <= 2)
-            {
-                printf("Insufficient arguments\n");
-                exit(1);
-            }
-
-            if (chdir(Home) != 0)
-            {
-                printf("sc: Error changing directory");
-                exit(1);
-            }
-
-            else if (chdir(".mix") != 0)
-                MkDirs(),
-                MkTmp();
-
-            chdir(".mix");
-            chdir("mellow");
-            chdir(".tmp");
-
-            // NOT IMPLEMENTED YET
+            printf("Insufficient arguments\n");
+            exit(1);
         }
-    */
+
+        if (chdir(Home) != 0)
+        {
+            printf("ic: Error changing directory");
+            exit(1);
+        }
+
+        else if (chdir(".mix") != 0)
+            MkDirs(),
+            MkTmp();
+
+        chdir("mellow");
+        chdir(".tmp");
+
+        char PATH[8192];
+        snprintf(PATH, sizeof(PATH), "%s/.mix/mellow/.tmp", Home);
+
+        int PkgExists = FindExistingPkg(argv[2], PATH);
+
+        if (PkgExists)
+        {
+            char Ui;
+
+            printf("Rebuild '%s' from scratch? [y/n]\n", argv[2]);
+            scanf("%c", &Ui);
+        
+            if (Ui == 'y' || Ui == 'Y')
+                DelTmp(),
+                MkTmp();
+        }
+
+        GetPackage(argv[2]);
+        BuildPackage(argv[2], PATH);
+    }
 
     return 0;
 }
