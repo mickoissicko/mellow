@@ -17,7 +17,7 @@ int Scraper(char* PackageName)
     CURL* Handle;
     char Buf[8192];
 
-    static const char* Filename = "results.txt";
+    static const char* FILENAME = "results.txt";
     
     curl_global_init(CURL_GLOBAL_ALL);
     Handle = curl_easy_init();
@@ -29,7 +29,7 @@ int Scraper(char* PackageName)
     curl_easy_setopt(Handle, CURLOPT_NOPROGRESS, 1L);
     curl_easy_setopt(Handle, CURLOPT_WRITEFUNCTION, write_data);
     
-    OutputFile = fopen(Filename, "wb");
+    OutputFile = fopen(FILENAME, "wb");
 
     if(OutputFile)
     {
