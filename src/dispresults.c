@@ -5,9 +5,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-const static char File[] = "results.txt";
+const static char FILENAME[] = "results.txt";
 
-void PrintFiles(const int Index, const char FilePath[])
+void PrintFiles(const int INDEX, const char FILEPATH[])
 {
     int Count = 1;
 
@@ -16,13 +16,13 @@ void PrintFiles(const int Index, const char FilePath[])
     char* Pkg;
     char* Ver;
 
-    while (Count != Index)
+    while (Count != INDEX)
     {
         snprintf(PkgName, sizeof(PkgName), "pkg%d.txt", Count);
 
-        Desc = GetData(1, PkgName, FilePath);
-        Pkg  = GetData(3, PkgName, FilePath);
-        Ver  = GetData(4, PkgName, FilePath);
+        Desc = GetData(1, PkgName, FILEPATH);
+        Pkg  = GetData(3, PkgName, FILEPATH);
+        Ver  = GetData(4, PkgName, FILEPATH);
 
         Desc[strcspn(Desc, "\n")] = '\0';
         Pkg[strcspn(Pkg, "\n")] = '\0';
@@ -42,11 +42,11 @@ void PrintFiles(const int Index, const char FilePath[])
     }
 }
 
-void DisplayResults(const char FilePath[])
+void DisplayResults(const char FILEPATH[])
 {
-    StripNewlines(File, FilePath);
+    StripNewlines(FILENAME, FILEPATH);
 
-    if (chdir(FilePath) != 0)
+    if (chdir(FILEPATH) != 0)
     {
         perror("disp.c: Error changing directory");
         exit(1);
@@ -64,7 +64,7 @@ void DisplayResults(const char FilePath[])
     int Index = 1;
     int Count = 1;
 
-    Txt = fopen(File, "r");
+    Txt = fopen(FILENAME, "r");
 
     while (fgets(Discard, sizeof(Buf), Txt))
     {
@@ -79,6 +79,6 @@ void DisplayResults(const char FilePath[])
 
     fclose(Txt);
 
-    PrintFiles(Index, FilePath);
+    PrintFiles(Index, FILEPATH);
 }
 

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void SplitFiles(const int Index, const int StartLine)
+void SplitFiles(const int INDEX, const int STARTLINE)
 {
     int CurrentLine = 1;
     int LineCount = 0;
@@ -15,12 +15,12 @@ void SplitFiles(const int Index, const int StartLine)
     FILE* Output;
     FILE* Input;
 
-    snprintf(Buf, sizeof(Buf), "pkg%d.txt", Index);
+    snprintf(Buf, sizeof(Buf), "pkg%d.txt", INDEX);
 
     Output = fopen(Buf, "w");
     Input = fopen("results.txt", "r");
 
-    while (CurrentLine != StartLine)
+    while (CurrentLine != STARTLINE)
     {
         if (fgets(Line, sizeof(Line), Input))
         {
@@ -51,7 +51,7 @@ void SplitFiles(const int Index, const int StartLine)
     fclose(Input);
 
     Tracker = fopen("trackfile.txt", "w");
-    fprintf(Tracker, "%d\n", Index);
+    fprintf(Tracker, "%d\n", INDEX);
     fclose(Tracker);
 }
 
