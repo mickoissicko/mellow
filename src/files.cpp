@@ -6,12 +6,35 @@
 
 extern "C"
 {
+    int FindExistingPkg(char Pkg[], const char PATH[]);
     void DelTmp();
     void MkDirs();
     void MkTmp();
 }
 
 namespace Fs = std::filesystem;
+
+int FindExistingPkg(char Pkg[], const char PATH[])
+{
+    int Existence = 0;
+
+    if (chdir(PATH) != 0)
+    {
+        MkDirs(),
+        MkTmp();
+
+        if (chdir(PATH) != 0)
+        {
+            perror("f.c: Error changing directory");
+            exit(1);
+        }
+    }
+
+    if (Fs::exists(Pkg))
+        Existence = 1;
+
+    return Existence;
+}
 
 void MkDirs()
 {
