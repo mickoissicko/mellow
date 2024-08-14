@@ -20,7 +20,23 @@ for SrcFile in "$SrcFolder"/*.cpp; do
     g++ -c "$SrcFile" -o "$Out"
 done
 
-for SrcFile in "$SrcFolder"/scraper/*.c; do
+for SrcFile in "$SrcFolder"/scripts/*.c; do
+    Base=$(basename "$SrcFile" .c)
+
+    Out="${ObjFolder}/${Base}.o"
+
+    gcc -c "$SrcFile" -o "$Out" -lcurl
+done
+
+for SrcFile in "$SrcFolder"/web/*.c; do
+    Base=$(basename "$SrcFile" .c)
+
+    Out="${ObjFolder}/${Base}.o"
+
+    gcc -c "$SrcFile" -o "$Out" -lcurl
+done
+
+for SrcFile in "$SrcFolder"/git/*c; do
     Base=$(basename "$SrcFile" .c)
 
     Out="${ObjFolder}/${Base}.o"
