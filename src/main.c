@@ -81,6 +81,7 @@ int main(int argc, char* argv[])
 
         GetPackage(argv[2]);
         BuildPackage(argv[2], PATH);
+        RemoveDeps(argv[2], PATH);
     }
 
     return 0;
