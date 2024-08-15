@@ -79,9 +79,16 @@ int main(int argc, char* argv[])
                 MkTmp();
         }
 
+        char Ui;
+
         GetPackage(argv[2]);
         BuildPackage(argv[2], PATH);
-        RemoveDeps(argv[2], PATH);
+
+        printf("Remove Make dependencies? [y/n]: ");
+        scanf("%c", &Ui);
+
+        if (Ui == 'y' || Ui == 'Y')
+            RemoveDeps(argv[2], PATH);
     }
 
     return 0;
