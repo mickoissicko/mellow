@@ -1,5 +1,8 @@
+#include "../../include/imports.h"
+
 #include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 
 void RemoveDeps(char PackageName[], const char PATH[])
@@ -11,6 +14,8 @@ void RemoveDeps(char PackageName[], const char PATH[])
     }
 
     char GitBuf[8192];
+    char Line[8192];
+    char Deps[8192];
     char Buf[8192];
 
     snprintf(Buf, sizeof(Buf), "%s/%s", PATH, PackageName);
@@ -30,8 +35,23 @@ void RemoveDeps(char PackageName[], const char PATH[])
 
     BuildFile = fopen("PKGBUILD", "r");
 
-    //
+    while (fgets(Line, sizeof(Line), BuildFile) != NULL)
+    {
+        if (strstr(Line, "makedepends") != NULL)
+        {
+            strcpy(Line, Deps);
+            break;
+        }
+
+        else
+        {
+            printf("There are no Make dependencies to remove\n");
+            return;
+        }
+    }
 
     fclose(BuildFile);
+
+    UninstallDeps(Deps, Buf);
 }
 
