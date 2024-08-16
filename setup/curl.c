@@ -8,7 +8,7 @@ static size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream)
     return written;
 }
 
-void Curl(const char URL[])
+void Curl(const char URL[], const char FILE_NAME[])
 {
     FILE* OutputFile;
     CURL* Handle;
@@ -21,7 +21,7 @@ void Curl(const char URL[])
     curl_easy_setopt(Handle, CURLOPT_NOPROGRESS, 1L);
     curl_easy_setopt(Handle, CURLOPT_WRITEFUNCTION, write_data);
 
-    OutputFile = fopen("index.txt", "wb");
+    OutputFile = fopen(FILE_NAME, "wb");
 
     if(OutputFile)
     {
