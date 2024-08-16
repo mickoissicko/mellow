@@ -8,7 +8,6 @@ add_executable(setup
         setup/setup.c
         setup/mkdir.cpp
         setup/curl.c
-
 )
 
 add_executable(mellow
@@ -29,4 +28,5 @@ add_executable(mellow
     src/git/clone.c
 )
 
+target_link_libraries(setup curl)
 target_link_libraries(mellow curl)
