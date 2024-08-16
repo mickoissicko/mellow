@@ -14,11 +14,11 @@ Field4 -> 7+3 chars
 7+3=10
 ********************/
 
-void StripNewlines(const char FILENAME[], const char FILEPATH[])
+void StripNewlines(const char FILE_NAME[], const char FILE_PATH[])
 {
     const char FORMATTEDFILE[] = "f.results.txt";
 
-    if (chdir(FILEPATH) != 0)
+    if (chdir(FILE_PATH) != 0)
     {
         perror("jsonf.c: Error changing directory");
         exit(1);
@@ -30,7 +30,7 @@ void StripNewlines(const char FILENAME[], const char FILEPATH[])
     FILE* Raw;
 
     Formatted = fopen(FORMATTEDFILE, "w");
-    Raw = fopen(FILENAME, "r");
+    Raw = fopen(FILE_NAME, "r");
 
     while (fgets(Buf, sizeof(Buf), Raw))
         for (char* Char = Buf; *Char; ++Char)
@@ -47,7 +47,7 @@ void StripNewlines(const char FILENAME[], const char FILEPATH[])
     fclose(Formatted);
     fclose(Raw);
 
-    remove(FILENAME);
-    rename(FORMATTEDFILE, FILENAME);
+    remove(FILE_NAME);
+    rename(FORMATTEDFILE, FILE_NAME);
 }
 

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void SplitFiles(const int INDEX, const int STARTLINE)
+void SplitFiles(const int INDEX, const int START_LINE)
 {
     int CurrentLine = 1;
     int LineCount = 0;
@@ -20,7 +20,7 @@ void SplitFiles(const int INDEX, const int STARTLINE)
     Output = fopen(Buf, "w");
     Input = fopen("results.txt", "r");
 
-    while (CurrentLine != STARTLINE)
+    while (CurrentLine != START_LINE)
     {
         if (fgets(Line, sizeof(Line), Input))
         {

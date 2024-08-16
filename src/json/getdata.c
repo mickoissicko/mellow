@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char* GetData(const int VAL, const char FILENAME[], const char FILEPATH[])
+char* GetData(const int VAL, const char FILE_NAME[], const char FILE_PATH[])
 {
     int Siz = 8192;
     int Index = 0;
@@ -10,13 +10,13 @@ char* GetData(const int VAL, const char FILENAME[], const char FILEPATH[])
     char* Ln = malloc(Siz * sizeof(char));
     FILE* Results;
 
-    if (chdir(FILEPATH) != 0)
+    if (chdir(FILE_PATH) != 0)
     {
         perror("gd.c: Error changing directory");
         exit(1);
     }
 
-    Results = fopen(FILENAME, "r");
+    Results = fopen(FILE_NAME, "r");
 
     /////////////////////////////////////////////
 
