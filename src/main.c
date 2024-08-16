@@ -6,6 +6,11 @@
 #include <unistd.h>
 #include <stdio.h>
 
+void Clear (void)
+{
+    while (getchar() != '\n');
+}
+
 int main(int argc, char* argv[])
 {
     char* Home = gethome();
@@ -71,7 +76,7 @@ int main(int argc, char* argv[])
         {
             char Ui;
 
-            printf("Rebuild '%s' from scratch? [y/n]\n", argv[2]);
+            printf("Rebuild '%s' from scratch? [y/n]: ", argv[2]);
             scanf("%c", &Ui);
         
             if (Ui == 'y' || Ui == 'Y')
@@ -85,7 +90,15 @@ int main(int argc, char* argv[])
         BuildPackage(argv[2], PATH);
 
         printf("Remove Make dependencies? [y/n]: ");
-        scanf("%c", &Ui);
+
+        if (PkgExists)
+        {
+            Clear();
+            Ui = getchar();
+        }
+
+        else
+            scanf("%c", &Ui);
 
         if (Ui == 'y' || Ui == 'Y')
             RemoveDeps(argv[2], PATH);
