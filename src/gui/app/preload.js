@@ -19,6 +19,7 @@ function consoleListener(){
 
                     output.appendChild(newLine);
                 }
+
                 txtBox.value = '';
             }
         }
