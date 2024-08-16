@@ -78,7 +78,7 @@ int main(int argc, char* argv[])
 
             printf("Rebuild '%s' from scratch? [y/n]: ", argv[2]);
             scanf("%c", &Ui);
-        
+
             if (Ui == 'y' || Ui == 'Y')
                 DelTmp(),
                 MkTmp();
