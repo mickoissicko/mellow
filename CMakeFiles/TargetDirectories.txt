@@ -1,0 +1,3 @@
+/home/mickey/Documents/projects/CLion/CMakeFiles/mellow.dir
+/home/mickey/Documents/projects/CLion/CMakeFiles/edit_cache.dir
+/home/mickey/Documents/projects/CLion/CMakeFiles/rebuild_cache.dir
