@@ -1,4 +1,5 @@
 build/bin
 src/gui/node_modules
 testing/
+Makefile
 
