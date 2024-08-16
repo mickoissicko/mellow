@@ -10,6 +10,7 @@ void RemoveDeps(char PackageName[], const char PATH[]);
 void SplitFiles(const int INDEX, const int STARTLINE);
 void UninstallDeps(char Deps[], const char PATH[]);
 void DisplayResults(const char FILEPATH[]);
+void RemovePkgs(const char PKG_NAME[]);
 void GetPackage(char* PackageName);
 void RemoveQuotes(char* String);
 void FiltreResults();
