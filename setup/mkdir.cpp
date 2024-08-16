@@ -3,6 +3,11 @@
 #include <iostream>
 #include <cstdlib>
 
+extern "C"
+{
+    void MkDir(const char DIR_NAME[], const char PATH[]);
+}
+
 namespace Fs = std::filesystem;
 
 void MkDir(const char DIR_NAME[], const char PATH[])
