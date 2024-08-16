@@ -1,6 +1,5 @@
 #ifndef IMPORTS_H
-    #define IMPORTS_H
-#endif
+#define IMPORTS_H
 
 char* GetData(const int VAL, const char FILE_NAME[], const char FILE_PATH[]);
 
@@ -22,4 +21,6 @@ int FindExistingPkg(char Pkg[], const char PATH[]);
 int Clone(const char URL[], const char PATH[]);
 int Scraper(char* PackageName);
 int PrettyPrinter();
+
+#endif // IMPORTS_H
 
