@@ -7,6 +7,8 @@ add_executable(setup
         setup/setup.c
         setup/mkdir.cpp
         setup/curl.c
+        setup/parser/ini.c
+        setup/rmdir.cpp
 )
 
 add_executable(mellow
