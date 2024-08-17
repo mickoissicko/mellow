@@ -4,7 +4,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <linux/limits.h>
 
 #include "../include/urls.h"
 
@@ -81,7 +80,7 @@ int main()
     char FullPath[8192];
     snprintf(FullPath, sizeof(FullPath), "%s/conf", Path);
 
-    ParseIni(GLOBAL, FullPath);
+    Translate(GLOBAL, USR, FullPath);
 
     if (UsrDefined)
         RmDir(Tmp);
