@@ -1,15 +1,14 @@
 #include "../../include/setup.h"
+#include "../../include/files.h"
 
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-const char GLOBAL_RAW[] = "global.raw";
-const char USER_RAW[] = "usr.raw";
-
-void Translate(const char GLOBAL[], const char USER[], const char FULL_PATH[])
+void Translate(const char PACKAGES[], const char FULL_PATH[])
 {
     printf("Translating ...\n");
+    printf("Applying your settings...\n");
 
     if (chdir(FULL_PATH) != 0)
     {
@@ -17,24 +16,8 @@ void Translate(const char GLOBAL[], const char USER[], const char FULL_PATH[])
         exit(1);
     }
 
-    FILE* Global = fopen(GLOBAL_RAW, "w");
-    FILE* User = fopen(USER_RAW, "w");
-
-    int WriteGlobal = 1;
-
-    for (int Mode = 0; Mode < 9; Mode++)
-    {
-        if (Mode != 7 && WriteGlobal)
-            WriteFile(Global, ParseIni(GLOBAL, FULL_PATH, Mode));
-
-        else
-        {
-            WriteFile(User, ParseIni(USER, FULL_PATH, Mode));
-            WriteGlobal = 0;
-        }
-    }
-
-    fclose(Global);
-    fclose(User);
+    FILE* PkgIndex = fopen(PACKAGE_RAW, "w");
+    WriteFile(PkgIndex, ParseIni(PACKAGES, FULL_PATH));
+    fclose(PkgIndex);
 }
 
