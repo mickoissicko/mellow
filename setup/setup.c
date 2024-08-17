@@ -82,11 +82,13 @@ int main()
 
     Translate(GLOBAL, USR, FullPath);
 
+    /*
     if (UsrDefined)
         RmDir(Tmp);
 
     else
         RmDir(Path);
+    */
 
     return 0;
 }
