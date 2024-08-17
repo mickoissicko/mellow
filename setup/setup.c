@@ -69,7 +69,7 @@ int main()
         exit(1);
     }
 
-    //Curl(PACKAGE_INI, PACKAGES);
+    Curl(PACKAGE_INI, PACKAGES);
 
     chdir("..");
 
@@ -80,11 +80,7 @@ int main()
     InstallPackages(FormatField(PACKAGE_RAW, FullPath), Path);
 
     /*
-    if (UsrDefined)
-        RmDir(Tmp);
-
-    else
-        RmDir(Path);
+    RmDir(Path);
     */
 
     return 0;
