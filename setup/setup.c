@@ -1,16 +1,21 @@
-#include "../lib/gethome/gethome.h"
 #include "../include/setup.h"
 
 #include <strings.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <linux/limits.h>
 
+#include "../include/urls.h"
+
+const char GLOBAL[] = "global.ini";
 const char SETUP_TMP[] = "mellow";
+const char USR[] = "usr.ini";
 
 int main()
 {
     int UsrDefined = 0;
+    char Path[4096];
     char Tmp[4096];
 
     printf("Preparing for install...\n");
@@ -25,8 +30,7 @@ int main()
         if (strcasecmp(Tmp, "q") == 0)
             exit(1);
 
-        else
-            UsrDefined = 1;
+        UsrDefined = 1;
 
         if (chdir(Tmp) != 0)
         {
@@ -37,14 +41,21 @@ int main()
     }
 
     if (UsrDefined)
+    {
         MkDir(SETUP_TMP, Tmp);
+        snprintf(Path, sizeof(Path), "%s/%s", Tmp, SETUP_TMP);
+    }
 
     else
-        MkDir(SETUP_TMP, "/tmp");
-
-    if (chdir(SETUP_TMP) != 0)
     {
-        perror("Error creating folder or moving to folder");
+        MkDir(SETUP_TMP, "/tmp");
+        snprintf(Path, sizeof(Path), "/tmp/%s", SETUP_TMP);
+    }
+
+    if (chdir(Path) != 0)
+    {
+        printf("Could not change directory to `%s`\n", Path);
+        perror("Unexpected exception");
         exit(1);
     }
 
@@ -54,7 +65,29 @@ int main()
         system("sudo pacman -S curl");
     }
 
-    
+    MkDir("conf", Path);
+
+    if (chdir("conf") != 0)
+    {
+        perror("Could not change directory to `conf`");
+        exit(1);
+    }
+
+    Curl(GLOBAL_INI, GLOBAL);
+    Curl(USR_INI, USR);
+
+    chdir("..");
+
+    char FullPath[8192];
+    snprintf(FullPath, sizeof(FullPath), "%s/conf", Path);
+
+    ParseIni(GLOBAL, FullPath);
+
+    if (UsrDefined)
+        RmDir(Tmp);
+
+    else
+        RmDir(Path);
 
     return 0;
 }
