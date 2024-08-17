@@ -3,49 +3,38 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
+
+const char GLOBAL_RAW[] = "global.raw";
+const char USER_RAW[] = "usr.raw";
 
 void Translate(const char GLOBAL[], const char USER[], const char FULL_PATH[])
 {
     printf("Translating ...\n");
-
-    char* FallbackPath;
-    char* CppStandard;
-    char* CppFallback;
-    char* CppCompiler;
-    char* CFallback;
-    char* CCompiler;
-    char* HomePath;
-    char* Compile;
-
-    int Mode = 0; // 0
-    Compile = ParseIni(GLOBAL, FULL_PATH, Mode);
-
-    Mode += 1; // 1
-    CppFallback = ParseIni(GLOBAL, FULL_PATH, Mode);
-
-    Mode += 1; // 2
-    CFallback = ParseIni(GLOBAL, FULL_PATH, Mode);
-
-    Mode += 1; // 3
-    CppStandard = ParseIni(GLOBAL, FULL_PATH, Mode);
-
-    Mode += 1; // 4
-    CCompiler = ParseIni(GLOBAL, FULL_PATH, Mode);
-
-    Mode += 1; // 5
-    CppCompiler = ParseIni(GLOBAL, FULL_PATH, Mode);
-
-    Mode += 1; // 6
-    HomePath = ParseIni(GLOBAL, FULL_PATH, Mode);
-
-    Mode += 1; // 7
-    FallbackPath = ParseIni(GLOBAL, FULL_PATH, Mode);
 
     if (chdir(FULL_PATH) != 0)
     {
         perror("Could not change directory");
         exit(1);
     }
+
+    FILE* Global = fopen(GLOBAL_RAW, "w");
+    FILE* User = fopen(USER_RAW, "w");
+
+    int WriteGlobal = 1;
+
+    for (int Mode = 0; Mode < 9; Mode++)
+    {
+        if (Mode != 7 && WriteGlobal)
+            WriteFile(Global, ParseIni(GLOBAL, FULL_PATH, Mode));
+
+        else
+        {
+            WriteFile(User, ParseIni(USER, FULL_PATH, Mode));
+            WriteGlobal = 0;
+        }
+    }
+
+    fclose(Global);
+    fclose(User);
 }
 
