@@ -11,6 +11,10 @@ add_executable(setup
         setup/rmdir.cpp
         setup/parser/translate.c
         setup/parser/writefile.c
+        setup/parser/ini/formatfield.cpp
+        include/files.h
+        setup/install.c
+        setup/checkpkgs.c
 )
 
 add_executable(mellow
