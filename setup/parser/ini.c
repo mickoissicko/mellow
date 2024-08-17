@@ -37,8 +37,10 @@ char* ParseIni(const char INI[], const char FULL_PATH[], const int MODE)
                 return Line;
         }
 
-        if (strstr(Line, "FALLBACK_C") != NULL)
-        {
+        if (
+            strstr(Line, "FALLBACK_CXX") == NULL &&
+            strstr(Line, "FALLBACK_C")   != NULL
+        ){
             Line[strcspn(Line, "\n")] = 0;
 
             if (MODE == 2)
@@ -69,13 +71,21 @@ char* ParseIni(const char INI[], const char FULL_PATH[], const int MODE)
                 return Line;
         }
 
+        if (strstr(Line, "REQUIRED") != NULL)
+        {
+            Line[strcspn(Line, "\n")] = 0;
+
+            if (MODE == 6)
+                return Line;
+        }
+
         if (
             strstr(Line, "FALLBACK_PATH") == NULL &&
             strstr(Line, "PATH")          != NULL
         ){
             Line[strcspn(Line, "\n")] = 0;
 
-            if (MODE == 6)
+            if (MODE == 7)
                 return Line;
         }
 
@@ -84,7 +94,7 @@ char* ParseIni(const char INI[], const char FULL_PATH[], const int MODE)
         ){
             Line[strcspn(Line, "\n")] = 0;
 
-            if (MODE == 7)
+            if (MODE == 8)
                 return Line;
         }
     }
