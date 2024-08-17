@@ -24,7 +24,6 @@ void MkDir(const char DIR_NAME[], const char PATH[])
         return;
     }
 
-    else
-        Fs::create_directories(DIR_NAME);
+    Fs::create_directories(DIR_NAME);
 }
 
