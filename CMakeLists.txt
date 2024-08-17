@@ -9,6 +9,7 @@ add_executable(setup
         setup/curl.c
         setup/parser/ini.c
         setup/rmdir.cpp
+        setup/parser/translate.c
 )
 
 add_executable(mellow
