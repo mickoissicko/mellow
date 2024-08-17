@@ -10,6 +10,7 @@ add_executable(setup
         setup/parser/ini.c
         setup/rmdir.cpp
         setup/parser/translate.c
+        setup/parser/writefile.c
 )
 
 add_executable(mellow
