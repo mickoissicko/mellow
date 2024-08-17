@@ -1,4 +1,5 @@
 #include "../include/setup.h"
+#include "../include/files.h"
 
 #include <strings.h>
 #include <unistd.h>
@@ -6,10 +7,6 @@
 #include <stdio.h>
 
 #include "../include/urls.h"
-
-const char GLOBAL[] = "global.ini";
-const char SETUP_TMP[] = "mellow";
-const char USR[] = "usr.ini";
 
 int main()
 {
@@ -72,15 +69,15 @@ int main()
         exit(1);
     }
 
-    Curl(GLOBAL_INI, GLOBAL);
-    Curl(USR_INI, USR);
+    //Curl(PACKAGE_INI, PACKAGES);
 
     chdir("..");
 
     char FullPath[8192];
     snprintf(FullPath, sizeof(FullPath), "%s/conf", Path);
 
-    Translate(GLOBAL, USR, FullPath);
+    Translate(PACKAGES, FullPath);
+    InstallPackages(FormatField(PACKAGE_RAW, FullPath), Path);
 
     /*
     if (UsrDefined)
