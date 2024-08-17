@@ -1,0 +1,21 @@
+# ninja log v6
+1	37	1723893936187830494	CMakeFiles/mellow.dir/src/scripts/rmpkgs.c.o	727c18c49193d83f
+1	45	1723893936187830494	CMakeFiles/mellow.dir/src/scripts/build.c.o	2c7c18d92d094caf
+1	52	1723893936187830494	CMakeFiles/mellow.dir/src/splitfiles.c.o	f1024958d1fce9b8
+1	54	1723893936187830494	CMakeFiles/mellow.dir/src/scripts/rmdeps.c.o	4a7553f937614fa9
+1	55	1723893936187830494	CMakeFiles/mellow.dir/src/web/getpkg.c.o	a10810bb530684e7
+1	59	1723893936187830494	CMakeFiles/mellow.dir/src/dispresults.c.o	917ac8d95b7f54c5
+2	63	1723893936187830494	CMakeFiles/mellow.dir/src/scripts/uninstall.c.o	752be3f40c87dd79
+1	66	1723893936187830494	CMakeFiles/mellow.dir/src/main.c.o	5875453743ddb7fd
+1	70	1723893936187830494	CMakeFiles/mellow.dir/src/web/scraper.c.o	e584ecea05b30452
+45	82	1723893936231163680	CMakeFiles/mellow.dir/src/json/formatjson.c.o	33524d8ac4738e1
+55	87	1723893936241163645	CMakeFiles/mellow.dir/src/json/getdata.c.o	d7eba9464d5d5aa3
+55	93	1723893936241163645	CMakeFiles/mellow.dir/src/git/clone.c.o	aa0d42b50b3e91e4
+37	101	1723893936224497035	CMakeFiles/mellow.dir/src/json/filtrejson.c.o	d25ec21dae28a95e
+52	101	1723893936241163645	CMakeFiles/mellow.dir/src/json/prettyprint.c.o	119f238a970ba048
+1	569	1723893936187830494	CMakeFiles/mellow.dir/src/files.cpp.o	24c3ec7ad0a1aeee
+569	631	1723893936757828547	mellow	29ce0a09817a5f30
+1	37	1723893947251126029	CMakeFiles/setup.dir/setup/setup.c.o	af5d93d21313392d
+1	45	1723893947251126029	CMakeFiles/setup.dir/setup/curl.c.o	532855f05895955d
+1	464	1723893947251126029	CMakeFiles/setup.dir/setup/mkdir.cpp.o	3fe503a4f144df0
+464	526	1723893947714457781	setup	212db01a290767c0
