@@ -8,10 +8,10 @@
 
 extern "C"
 {
-    char* FormatField(const char FILE_NAME[], const char PATH[]);
+    char* FormatField(const char FILE_NAME[], const char PATH[], int EraseCommas);
 }
 
-char* FormatField(const char FILE_NAME[], const char PATH[])
+char* FormatField(const char FILE_NAME[], const char PATH[], int EraseCommas)
 {
     if (chdir(PATH) != 0)
     {
@@ -42,15 +42,21 @@ char* FormatField(const char FILE_NAME[], const char PATH[])
 
     Index = 0;
 
-    while (Index < Quotes.size())
+    if (EraseCommas)
     {
-        if (Quotes[Index] != ',')
-            PkgArray += Quotes[Index];
+        while (Index < Quotes.size())
+        {
+            if (Quotes[Index] != ',')
+                PkgArray += Quotes[Index];
 
-        Index++;
+            Index++;
+        }
+
+        snprintf(C_Line, MAX_LINE_LENGTH, "%s", PkgArray.c_str());
     }
 
-    snprintf(C_Line, MAX_LINE_LENGTH, "%s", PkgArray.c_str());
+    else
+        snprintf(C_Line, MAX_LINE_LENGTH, "%s", Quotes.c_str());
 
     Ini.close();
     return C_Line;
