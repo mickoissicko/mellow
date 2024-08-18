@@ -33,6 +33,10 @@ void InstallMissingPackages(char PackageList[], char InstalledPackages[], int In
         MissingPackages[Index] = strndup(Start, Length);
     }
 
+    // TODO: Check if substring MissingPackages[Index] exists in PackageList
+    // To do this, check for MissingPackages[Index] against PackageList each
+    // Then add the ones not found to makepkg
+
     printf("%s\n", MissingPackages[Index]);
 }
 
