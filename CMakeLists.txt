@@ -15,6 +15,8 @@ add_executable(setup
         include/files.h
         setup/install.c
         setup/checkpkgs.c
+        setup/string/string.cpp
+        setup/scripts/makepkg.c
 )
 
 add_executable(mellow
@@ -37,3 +39,4 @@ add_executable(mellow
 
 target_link_libraries(setup curl)
 target_link_libraries(mellow curl)
+
