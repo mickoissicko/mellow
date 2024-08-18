@@ -1,12 +1,11 @@
 #include "../include/setup.h"
 #include "../include/files.h"
+#include "../include/urls.h"
 
 #include <strings.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-
-#include "../include/urls.h"
 
 int main()
 {
@@ -77,10 +76,19 @@ int main()
     snprintf(FullPath, sizeof(FullPath), "%s/conf", Path);
 
     Translate(PACKAGES, FullPath);
-    InstallPackages(FormatField(PACKAGE_RAW, FullPath), Path);
+
+    if (CheckInstalled(FormatField(PACKAGE_RAW, FullPath, 1), Path) == 0)
+    {
+        printf("Some packages are not installed...\n");
+
+        InstallPackages(FormatField(PACKAGE_RAW, FullPath, 0), Path);
+    }
+
+    //else
+        //printf("All dependencies met!\n");
 
     /*
-    RmDir(Path);
+        RmDir(Path);
     */
 
     return 0;
