@@ -68,7 +68,7 @@ int main()
         exit(1);
     }
 
-    Curl(PACKAGE_INI, PACKAGES);
+    //Curl(PACKAGE_INI, PACKAGES);
 
     chdir("..");
 
@@ -77,15 +77,17 @@ int main()
 
     Translate(PACKAGES, FullPath);
 
-    if (CheckInstalled(FormatField(PACKAGE_RAW, FullPath, 1), Path) == 0)
+    int Ret = CheckInstalled(FormatField(PACKAGE_RAW, FullPath, 1), Path);
+
+    if (Ret != 0)
     {
-        printf("Some packages are not installed...\n");
+        printf("Some dependencies are not installed...\n");
 
         InstallPackages(FormatField(PACKAGE_RAW, FullPath, 0), Path);
     }
 
-    //else
-        //printf("All dependencies met!\n");
+    else
+        printf("All dependencies met!\n");
 
     /*
         RmDir(Path);
