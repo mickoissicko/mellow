@@ -17,6 +17,8 @@ add_executable(setup
         setup/checkpkgs.c
         setup/string/string.cpp
         setup/scripts/makepkg.c
+        setup/scripts/getmissing.c
+        setup/string/string.c
 )
 
 add_executable(mellow
