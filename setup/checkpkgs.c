@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <fcntl.h>
 #include <stdio.h>
 
 #define MAX_LINE_LENGTH 1024
@@ -31,14 +30,11 @@ char* FindPackages(char PackageList[], int LineCount, FILE* InstalledPackages)
         CurrentLine++;
     }
 
-    printf("%s\n", MissingPackageList);
     return MissingPackageList;
 }
 
 int CheckInstalled(char PackageList[], const char PATH[])
 {
-    int Missing = 0;
-
     if (chdir(PATH) != 0)
     {
         perror("Could not change directory");
@@ -46,23 +42,12 @@ int CheckInstalled(char PackageList[], const char PATH[])
     }
 
     char Buffer[1024];
-    snprintf(Buffer, sizeof(Buffer), "pacman -Q %s", PackageList);
-
-    int Results = open("pacman.txt", O_CREAT | O_WRONLY, S_IRWXU | S_IRWXG);
-    int StdOut = dup(STDOUT_FILENO);
-
-    dup2(Results, STDOUT_FILENO);
-    close(Results);
+    snprintf(Buffer, sizeof(Buffer), "pacman -Q %s > pacman.txt", PackageList);
 
     if (system(Buffer) != 0)
-        Missing = 1;
+        return 1;
 
-    dup2(StdOut, STDOUT_FILENO);
-    close(StdOut);
-
-    if (!Missing)
-        return 0;
-
-    return 1;
+    return 0;
 }
+
 
