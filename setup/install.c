@@ -41,6 +41,8 @@ void InstallPackages(const char PACKAGE_LIST[], const char PATH[])
         }
 
     fclose(Installed);
-    GetMissingPackages(PackageList, InstalledPackagesList);
+
+    MakeInstallationList(PackageList, InstalledPackagesList, PATH);
+
 }
 
