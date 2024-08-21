@@ -2,13 +2,15 @@
 #include "../include/files.h"
 #include "../include/urls.h"
 
-#include <strings.h>
+#include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
 
 int main()
 {
+    printf("NOTE: Please run this with `-Sc` to clean temp folder if it is not removed normally!\n");
+
     int UsrDefined = 0;
     char Path[4096];
     char Tmp[4096];
@@ -37,14 +39,16 @@ int main()
 
     if (UsrDefined)
     {
-        MkDir(SETUP_TMP, Tmp);
         snprintf(Path, sizeof(Path), "%s/%s", Tmp, SETUP_TMP);
+        RmDir(Path);
+        MkDir(SETUP_TMP, Tmp);
     }
 
     else
     {
-        MkDir(SETUP_TMP, "/tmp");
         snprintf(Path, sizeof(Path), "/tmp/%s", SETUP_TMP);
+        RmDir(Path);
+        MkDir(SETUP_TMP, "/tmp");
     }
 
     if (chdir(Path) != 0)
@@ -89,10 +93,7 @@ int main()
     else
         printf("All dependencies met!\n");
 
-    /*
-        RmDir(Path);
-    */
-
+    RmDir(Path);
     return 0;
 }
 
