@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "mellow"
+			"path" : "setup"
 		}
 	],
 	"backtrace" : 1,
@@ -11,7 +11,8 @@
 		"commands" : 
 		[
 			"add_executable",
-			"target_link_libraries"
+			"target_link_libraries",
+			"add_compile_options"
 		],
 		"files" : 
 		[
@@ -25,13 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 14,
+				"line" : 8,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 33,
+				"line" : 45,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 6,
 				"parent" : 0
 			}
 		]
@@ -42,7 +49,46 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -fdiagnostics-color=always"
+					"fragment" : "-O3 -DNDEBUG -std=gnu99 -fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Ofast"
+				}
+			],
+			"language" : "C",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "99"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				2,
+				3,
+				5,
+				6,
+				9,
+				10,
+				12,
+				13,
+				14,
+				15
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O3 -DNDEBUG -fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Ofast"
 				}
 			],
 			"language" : "CXX",
@@ -56,43 +102,20 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
-			]
-		},
-		{
-			"compileCommandFragments" : 
-			[
-				{
-					"fragment" : "-g -fdiagnostics-color=always"
-				}
-			],
-			"language" : "C",
-			"sourceIndexes" : 
-			[
 				1,
-				2,
-				3,
 				4,
-				5,
-				6,
 				7,
-				8,
-				9,
-				10,
-				11,
-				12,
-				13,
-				14
+				11
 			]
 		}
 	],
-	"id" : "mellow::@6890427a1f51a3e7e1df",
+	"id" : "setup::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "-O3 -DNDEBUG",
 				"role" : "flags"
 			},
 			{
@@ -107,8 +130,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "mellow",
-	"nameOnDisk" : "mellow",
+	"name" : "setup",
+	"nameOnDisk" : "setup",
 	"paths" : 
 	{
 		"build" : ".",
@@ -128,13 +151,20 @@
 				5,
 				6,
 				7,
-				8,
 				9,
 				10,
 				11,
 				12,
 				13,
-				14
+				14,
+				15
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				8
 			]
 		}
 	],
@@ -143,91 +173,96 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/files.cpp",
+			"path" : "setup/setup.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 1,
-			"path" : "src/main.c",
+			"path" : "setup/mkdir.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "setup/curl.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "setup/parser/ini.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 1,
-			"path" : "src/splitfiles.c",
+			"path" : "setup/rmdir.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "setup/parser/translate.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "setup/parser/writefile.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 1,
-			"path" : "src/dispresults.c",
+			"path" : "setup/parser/ini/formatfield.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/files.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "setup/install.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "setup/checkpkgs.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 1,
-			"path" : "src/web/getpkg.c",
+			"path" : "setup/string/string.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/web/scraper.c",
+			"compileGroupIndex" : 0,
+			"path" : "setup/scripts/makepkg.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/scripts/build.c",
+			"compileGroupIndex" : 0,
+			"path" : "setup/scripts/getmissing.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/scripts/rmdeps.c",
+			"compileGroupIndex" : 0,
+			"path" : "setup/string/string.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/scripts/rmpkgs.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/scripts/uninstall.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/json/filtrejson.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/json/formatjson.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/json/prettyprint.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/json/getdata.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/git/clone.c",
+			"compileGroupIndex" : 0,
+			"path" : "setup/parser/readfile.c",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Release-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.29"
@@ -20,7 +20,7 @@
 					]
 				}
 			],
-			"name" : "Release",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -41,14 +41,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "mellow::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-mellow-Release-2b9f6e97f9d104fe05f2.json",
+					"jsonFile" : "target-mellow-Debug-957812cbaae2191a3961.json",
 					"name" : "mellow",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "setup::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-setup-Release-fefef502b571bf775751.json",
+					"jsonFile" : "target-setup-Debug-859a06a63c372164c221.json",
 					"name" : "setup",
 					"projectIndex" : 0
 				}
@@ -58,7 +58,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/mickey/Documents/projects/CLion/mellow/build",
+		"build" : "/home/mickey/Documents/projects/CLion/mellow/debug",
 		"source" : "/home/mickey/Documents/projects/CLion/mellow"
 	},
 	"version" : 
