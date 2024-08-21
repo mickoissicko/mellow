@@ -1,7 +1,7 @@
 #include "../lib/gethome/gethome.h"
 #include "../include/imports.h"
 
-#include <strings.h>
+#include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -84,7 +84,7 @@ int main(int argc, char* argv[])
                 MkTmp();
         }
 
-        char Ui;
+        int Ui;
 
         GetPackage(argv[2]);
         BuildPackage(argv[2], PATH);
