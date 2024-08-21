@@ -3,6 +3,6 @@
 
 void MakePackage(char Package[])
 {
-    // TODO: Implement makepkg
+    // TODO: Implement make-pkg tool
 }
 
