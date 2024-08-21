@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void Clear (void)
+void Clear(void)
 {
     while (getchar() != '\n');
 }
