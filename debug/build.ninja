@@ -115,11 +115,11 @@ build CMakeFiles/setup.dir/setup/string/string.cpp.o: CXX_COMPILER__setup_unscan
   OBJECT_DIR = CMakeFiles/setup.dir
   OBJECT_FILE_DIR = CMakeFiles/setup.dir/setup/string
 
-build CMakeFiles/setup.dir/setup/scripts/makepkg.c.o: C_COMPILER__setup_unscanned_Debug /home/mickey/Documents/projects/CLion/mellow/setup/scripts/makepkg.c || cmake_object_order_depends_target_setup
-  DEP_FILE = CMakeFiles/setup.dir/setup/scripts/makepkg.c.o.d
+build CMakeFiles/setup.dir/setup/tools/makepkg.c.o: C_COMPILER__setup_unscanned_Debug /home/mickey/Documents/projects/CLion/mellow/setup/tools/makepkg.c || cmake_object_order_depends_target_setup
+  DEP_FILE = CMakeFiles/setup.dir/setup/tools/makepkg.c.o.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -Ofast
   OBJECT_DIR = CMakeFiles/setup.dir
-  OBJECT_FILE_DIR = CMakeFiles/setup.dir/setup/scripts
+  OBJECT_FILE_DIR = CMakeFiles/setup.dir/setup/tools
 
 build CMakeFiles/setup.dir/setup/scripts/getmissing.c.o: C_COMPILER__setup_unscanned_Debug /home/mickey/Documents/projects/CLion/mellow/setup/scripts/getmissing.c || cmake_object_order_depends_target_setup
   DEP_FILE = CMakeFiles/setup.dir/setup/scripts/getmissing.c.o.d
@@ -139,6 +139,12 @@ build CMakeFiles/setup.dir/setup/parser/readfile.c.o: C_COMPILER__setup_unscanne
   OBJECT_DIR = CMakeFiles/setup.dir
   OBJECT_FILE_DIR = CMakeFiles/setup.dir/setup/parser
 
+build CMakeFiles/setup.dir/setup/tools/downloadpkg.c.o: C_COMPILER__setup_unscanned_Debug /home/mickey/Documents/projects/CLion/mellow/setup/tools/downloadpkg.c || cmake_object_order_depends_target_setup
+  DEP_FILE = CMakeFiles/setup.dir/setup/tools/downloadpkg.c.o.d
+  FLAGS = -g -std=gnu99 -fdiagnostics-color=always -Ofast
+  OBJECT_DIR = CMakeFiles/setup.dir
+  OBJECT_FILE_DIR = CMakeFiles/setup.dir/setup/tools
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target setup
@@ -147,11 +153,11 @@ build CMakeFiles/setup.dir/setup/parser/readfile.c.o: C_COMPILER__setup_unscanne
 #############################################
 # Link the executable setup
 
-build setup: CXX_EXECUTABLE_LINKER__setup_Debug CMakeFiles/setup.dir/setup/setup.c.o CMakeFiles/setup.dir/setup/mkdir.cpp.o CMakeFiles/setup.dir/setup/curl.c.o CMakeFiles/setup.dir/setup/parser/ini.c.o CMakeFiles/setup.dir/setup/rmdir.cpp.o CMakeFiles/setup.dir/setup/parser/translate.c.o CMakeFiles/setup.dir/setup/parser/writefile.c.o CMakeFiles/setup.dir/setup/parser/ini/formatfield.cpp.o CMakeFiles/setup.dir/setup/install.c.o CMakeFiles/setup.dir/setup/checkpkgs.c.o CMakeFiles/setup.dir/setup/string/string.cpp.o CMakeFiles/setup.dir/setup/scripts/makepkg.c.o CMakeFiles/setup.dir/setup/scripts/getmissing.c.o CMakeFiles/setup.dir/setup/string/string.c.o CMakeFiles/setup.dir/setup/parser/readfile.c.o
+build setup: CXX_EXECUTABLE_LINKER__setup_Debug CMakeFiles/setup.dir/setup/setup.c.o CMakeFiles/setup.dir/setup/mkdir.cpp.o CMakeFiles/setup.dir/setup/curl.c.o CMakeFiles/setup.dir/setup/parser/ini.c.o CMakeFiles/setup.dir/setup/rmdir.cpp.o CMakeFiles/setup.dir/setup/parser/translate.c.o CMakeFiles/setup.dir/setup/parser/writefile.c.o CMakeFiles/setup.dir/setup/parser/ini/formatfield.cpp.o CMakeFiles/setup.dir/setup/install.c.o CMakeFiles/setup.dir/setup/checkpkgs.c.o CMakeFiles/setup.dir/setup/string/string.cpp.o CMakeFiles/setup.dir/setup/tools/makepkg.c.o CMakeFiles/setup.dir/setup/scripts/getmissing.c.o CMakeFiles/setup.dir/setup/string/string.c.o CMakeFiles/setup.dir/setup/parser/readfile.c.o CMakeFiles/setup.dir/setup/tools/downloadpkg.c.o
   FLAGS = -g
-  LINK_LIBRARIES = -lcurl
+  LINK_LIBRARIES = -lcurl  -lgit2
   OBJECT_DIR = CMakeFiles/setup.dir
-  POST_BUILD = :
+  POST_BUILD = cd /home/mickey/Documents/projects/CLion/mellow/debug && /home/mickey/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E copy_directory /home/mickey/Documents/projects/CLion/mellow/debug/CMakeFiles/setup.dir /home/mickey/Documents/projects/CLion/mellow/obj/setup
   PRE_LINK = :
   TARGET_FILE = setup
   TARGET_PDB = setup.dbg
@@ -267,7 +273,7 @@ build mellow: CXX_EXECUTABLE_LINKER__mellow_Debug CMakeFiles/mellow.dir/src/file
   FLAGS = -g
   LINK_LIBRARIES = -lcurl
   OBJECT_DIR = CMakeFiles/mellow.dir
-  POST_BUILD = :
+  POST_BUILD = cd /home/mickey/Documents/projects/CLion/mellow/debug && /home/mickey/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E copy_directory /home/mickey/Documents/projects/CLion/mellow/debug/CMakeFiles/mellow.dir /home/mickey/Documents/projects/CLion/mellow/obj/mellow
   PRE_LINK = :
   TARGET_FILE = mellow
   TARGET_PDB = mellow.dbg
