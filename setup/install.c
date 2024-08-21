@@ -44,5 +44,34 @@ void InstallPackages(const char PACKAGE_LIST[], const char PATH[])
 
     MakeInstallationList(PackageList, InstalledPackagesList, PATH);
 
+    FILE* Deps = fopen("install.txt", "r");
+
+    char* Line = (char*)malloc(sizeof(char) * MAX_LINE_LENGTH);
+    int CurrentLine = 0;
+    int Lines = 0;
+
+    while (fgets(Line, MAX_LINE_LENGTH, Deps) != NULL)
+        Lines++;
+
+    rewind(Deps);
+
+    while (CurrentLine != Lines)
+    {
+        DownloadPackage(ReadFile(Deps, 1), PATH);
+
+        CurrentLine++;
+    }
+
+    CurrentLine = 0;
+    rewind(Deps);
+
+    while (CurrentLine != Lines)
+    {
+        MakePackage(ReadFile(Deps, 1), PATH);
+
+        CurrentLine++;
+    }
+
+    fclose(Deps);
 }
 
