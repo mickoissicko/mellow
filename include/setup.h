@@ -7,8 +7,9 @@ char* FormatField(const char FILE_NAME[], const char PATH[], int EraseCommas);
 char* ParseIni(const char INI[], const char FULL_PATH[]);
 char* Replace(char String[], int Delim);
 char* Append(char String[]);
+char* ReadFile(FILE* File);
 
-void GetMissingPackages(char PackageList[], char InstalledPackageList[]);
+void MakeInstallationList(char PackageList[], char InstalledPackageList[], const char PATH[]);
 void InstallPackages(const char PACKAGE_LIST[], const char PATH[]);
 void Translate(const char GLOBAL[], const char FULL_PATH[]);
 void GetFields(const char FILE_NAME[], const char PATH[]);
