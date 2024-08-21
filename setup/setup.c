@@ -68,7 +68,7 @@ int main()
         exit(1);
     }
 
-    //Curl(PACKAGE_INI, PACKAGES);
+    Curl(PACKAGE_INI, PACKAGES);
 
     chdir("..");
 
