@@ -93,6 +93,9 @@ int main()
     else
         printf("All dependencies met!\n");
 
+    // TODO: implement main installer (get aur helper itself)
+    // TODO: implement method to add to paths (make available globally)
+
     RmDir(Path);
     return 0;
 }
