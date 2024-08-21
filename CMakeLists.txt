@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.29)
 project(mellow)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_C_STANDARD 99)
+add_compile_options(-Ofast)
 
 add_executable(setup
         setup/setup.c
@@ -19,6 +21,7 @@ add_executable(setup
         setup/scripts/makepkg.c
         setup/scripts/getmissing.c
         setup/string/string.c
+        setup/parser/readfile.c
 )
 
 add_executable(mellow
