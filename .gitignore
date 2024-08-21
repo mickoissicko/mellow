@@ -1,11 +1,13 @@
-build/Testing
 build/.cmake
-build/bin
+build/CMakeFiles
+build/Testing
+build/build.ninja
+build/cmake_install.cmake
+build/CMakeCache.txt
 debug/.cmake
-gui/node_modules
+debug/CMakeFiles
+debug/build.ninja
+debug/cmake_install.cmake
+debug/CMakeCache.txt
 testing/
-Makefile
-CMakeCache.txt
-CMakeFiles/
-cmake-build-debug/
 
