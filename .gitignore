@@ -1,4 +1,7 @@
+build/Testing
+build/.cmake
 build/bin
+debug/.cmake
 gui/node_modules
 testing/
 Makefile
