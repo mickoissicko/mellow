@@ -17,7 +17,7 @@ void RemoveQuotes(char* String)
     *Dest = '\0';
 }
 
-void SplitText()
+void SplitText(void)
 {
     FILE* Results = fopen("results.txt", "r");
     FILE* Temp    = fopen("tmp.txt", "w");
@@ -38,7 +38,7 @@ void SplitText()
     fclose(Temp);
 }
 
-void FiltreResults()
+void FiltreResults(void)
 {
     char* FiltredStr;
     FILE* R_Results;

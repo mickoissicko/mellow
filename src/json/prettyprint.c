@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int PrettyPrinter()
+int PrettyPrinter(void)
 {
     size_t Siz = 0;
 

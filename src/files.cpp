@@ -7,9 +7,9 @@
 extern "C"
 {
     int FindExistingPkg(char Pkg[], const char PATH[]);
-    void DelTmp();
-    void MkDirs();
-    void MkTmp();
+    void DelTmp(void);
+    void MkDirs(void);
+    void MkTmp(void);
 }
 
 namespace Fs = std::filesystem;
@@ -36,7 +36,7 @@ int FindExistingPkg(char Pkg[], const char PATH[])
     return Existence;
 }
 
-void MkDirs()
+void MkDirs(void)
 {
     char* Path = gethome();
 
@@ -61,7 +61,7 @@ void MkDirs()
     chdir(Path);
 }
 
-void MkTmp()
+void MkTmp(void)
 {
     char* Home = gethome();
     char Ui;
@@ -94,7 +94,7 @@ void MkTmp()
     }
 }
 
-void DelTmp()
+void DelTmp(void)
 {
     char* Home = gethome();
 
