@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.29)
 project(mellow)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "/home/mickey/Documents/projects/CLion/mellow/build/")
 set(OBJECT_DIR "${CMAKE_SOURCE_DIR}/obj")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 99)
