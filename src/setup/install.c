@@ -1,4 +1,4 @@
-#include "../include/setup.h"
+#include "../../include/setup.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -19,6 +19,7 @@ void InstallPackages(const char PACKAGE_LIST[], const char PATH[])
     strcpy(PackageList, PACKAGE_LIST);
 
     printf("Installing packages...\n");
+    printf("Please wait...\n");
 
     int TotalLines = 0;
     char* InstalledPackagesList = 0;

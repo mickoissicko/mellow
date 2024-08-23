@@ -1,5 +1,5 @@
-#include "../../include/setup.h"
-#include "../../include/urls.h"
+#include "../../../include/imports.h"
+#include "../../../include/urls.h"
 
 #include <stdlib.h>
 #include <stdio.h>

@@ -1,5 +1,5 @@
-#include "../../include/setup.h"
-#include "../../include/files.h"
+#include "../../../include/imports.h"
+#include "../../../include/files.h"
 
 #include <unistd.h>
 #include <stdlib.h>

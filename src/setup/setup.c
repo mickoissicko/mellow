@@ -1,13 +1,13 @@
-#include "../include/setup.h"
-#include "../include/files.h"
-#include "../include/urls.h"
+#include "../../include/imports.h"
+#include "../../include/files.h"
+#include "../../include/urls.h"
 
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-int main()
+int Setup(void)
 {
     printf("NOTE: Please run this with `-Sc` to clean temp folder if it is not removed normally!\n");
 
@@ -92,9 +92,6 @@ int main()
 
     else
         printf("All dependencies met!\n");
-
-    // TODO: implement main installer (get aur helper itself)
-    // TODO: implement method to add to paths (make available globally)
 
     RmDir(Path);
     return 0;
