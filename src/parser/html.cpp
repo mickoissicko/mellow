@@ -5,34 +5,20 @@
 #include <cstdio>
 
 #define FILE_NAME "package.html"
+#define LINK_FILE "link.txt"
 #define MAX_LINK_LENGTH 1024
-
-class ConstructString {
-public:
-    void AddChar(char Char)
-    {
-        Result += Char;
-    }
-
-    [[nodiscard]] std::string GetString() const
-    {
-        return Result;
-    }
-
-private:
-    std::string Result;
-};
-
-void AssembleLink(char Cursor)
-{
-    ConstructString Construct;
-    Construct.AddChar(Cursor);
-
-    std::string String = Construct.GetString();
-}
 
 void ParseHTML(std::ifstream& File)
 {
+    std::ofstream LinkFile;
+    LinkFile.open(LINK_FILE);
+
+    if (!LinkFile.is_open())
+    {
+        std::cerr << "Unable to open link file" << '\n';
+        exit(1);
+    }
+
     const std::string HREF_TAG = "href=\"";
     std::string Line;
 
@@ -47,14 +33,15 @@ void ParseHTML(std::ifstream& File)
 
                 while (Line[HrefPos] != '\"')
                 {
-                    AssembleLink(Line[HrefPos]);
+                    LinkFile << Line[HrefPos];
 
                     HrefPos++;
                 }
-
-                std::putchar('\n');
             }
         }
+
+    LinkFile << '\n';
+    LinkFile.close();
 }
 
 void GetHTML(const char FILE_PATH[])
