@@ -34,12 +34,15 @@ void FiltreResults(void);
 void DelTmp(void);
 void MkDirs(void);
 void MkTmp(void);
+void Clear(void);
 
 int CheckInstalled(char PackageList[], const char PATH[]);
 int FindExistingPkg(char Pkg[], const char PATH[]);
 int Clone(const char URL[], const char PATH[]);
+int Mellow(int argc, char* argv[]);
 int Scraper(char* PackageName);
 int PrettyPrinter(void);
+int Setup(void);
 
 #endif // IMPORTS_H
 
