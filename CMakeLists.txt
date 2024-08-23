@@ -26,11 +26,11 @@ add_executable(mellow
         src/setup/setup.c
         src/setup/mkdir.cpp
         src/setup/curl.c
-        src/setup/parser/ini.c
+        src/parser/ini.c
         src/setup/rmdir.cpp
-        src/setup/parser/translate.c
-        src/setup/parser/writefile.c
-        src/setup/parser/ini/formatfield.cpp
+        src/setup/formatter/translate.c
+        src/setup/formatter/writefile.c
+        src/setup/formatter/formatfield.cpp
         include/files.h
         src/setup/install.c
         src/setup/checkpkgs.c
@@ -38,9 +38,10 @@ add_executable(mellow
         src/setup/tools/makepkg.c
         src/setup/scripts/getmissing.c
         src/setup/string/string.c
-        src/setup/parser/readfile.c
+        src/setup/formatter/readfile.c
         src/setup/tools/downloadpkg.c
         src/main.c
+        src/parser/html.cpp
 )
 
 target_link_libraries(mellow curl git2)
