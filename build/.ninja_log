@@ -23,7 +23,7 @@
 1	62	1724268268434297792	CMakeFiles/mellow.dir/src/dispresults.c.o	55bb9602a4f7f3e4
 2	62	1724268268437631155	CMakeFiles/mellow.dir/src/scripts/rmpkgs.c.o	1eaf9ad712fd3f9b
 6	72	1724268268440964518	CMakeFiles/mellow.dir/src/scripts/uninstall.c.o	7a98b63ae1cedbb1
-1	72	1724268268434297792	CMakeFiles/mellow.dir/src/main.c.o	99747994d319c5ba
+1	72	1724268268434297792	CMakeFiles/mellow.dir/src/mellow.c.o	99747994d319c5ba
 1	79	1724268268434297792	CMakeFiles/mellow.dir/src/web/scraper.c.o	b6a0f503bcc289c8
 59	99	1724268268494298324	CMakeFiles/mellow.dir/src/json/getdata.c.o	8dac9d270380bc21
 58	104	1724268268494298324	CMakeFiles/mellow.dir/src/json/formatjson.c.o	11fc6d52d47de1e8
