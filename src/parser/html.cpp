@@ -5,6 +5,31 @@
 #include <cstdio>
 
 #define FILE_NAME "package.html"
+#define MAX_LINK_LENGTH 1024
+
+class ConstructString {
+public:
+    void AddChar(char Char)
+    {
+        Result += Char;
+    }
+
+    [[nodiscard]] std::string GetString() const
+    {
+        return Result;
+    }
+
+private:
+    std::string Result;
+};
+
+void AssembleLink(char Cursor)
+{
+    ConstructString Construct;
+    Construct.AddChar(Cursor);
+
+    std::string String = Construct.GetString();
+}
 
 void ParseHTML(std::ifstream& File)
 {
@@ -22,7 +47,7 @@ void ParseHTML(std::ifstream& File)
 
                 while (Line[HrefPos] != '\"')
                 {
-                    std::putchar(Line[HrefPos]);
+                    AssembleLink(Line[HrefPos]);
 
                     HrefPos++;
                 }
