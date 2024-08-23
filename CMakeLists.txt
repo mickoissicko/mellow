@@ -28,9 +28,9 @@ add_executable(mellow
         src/setup/curl.c
         src/parser/ini.c
         src/setup/rmdir.cpp
-        src/setup/formatter/translate.c
-        src/setup/formatter/writefile.c
-        src/setup/formatter/formatfield.cpp
+        src/setup/fileio/translate.c
+        src/setup/fileio/writefile.c
+        src/setup/scripts/formatfield.cpp
         include/files.h
         src/setup/install.c
         src/setup/checkpkgs.c
@@ -38,7 +38,7 @@ add_executable(mellow
         src/setup/tools/makepkg.c
         src/setup/scripts/getmissing.c
         src/setup/string/string.c
-        src/setup/formatter/readfile.c
+        src/setup/fileio/readfile.c
         src/setup/tools/downloadpkg.c
         src/main.c
         src/parser/html.cpp
