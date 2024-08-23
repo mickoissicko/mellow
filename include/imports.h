@@ -30,16 +30,16 @@ void RemovePkgs(const char PKG_NAME[]);
 void GetPackage(char* PackageName);
 void RmDir(const char DIR_NAME[]);
 void RemoveQuotes(char* String);
-void FiltreResults();
-void DelTmp();
-void MkDirs();
-void MkTmp();
+void FiltreResults(void);
+void DelTmp(void);
+void MkDirs(void);
+void MkTmp(void);
 
 int CheckInstalled(char PackageList[], const char PATH[]);
 int FindExistingPkg(char Pkg[], const char PATH[]);
 int Clone(const char URL[], const char PATH[]);
 int Scraper(char* PackageName);
-int PrettyPrinter();
+int PrettyPrinter(void);
 
 #endif // IMPORTS_H
 
