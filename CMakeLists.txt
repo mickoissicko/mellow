@@ -44,7 +44,7 @@ add_executable(mellow
         src/parser/html.cpp
 )
 
-target_link_libraries(mellow curl git2)
+target_link_libraries(mellow curl git2 openssl)
 
 add_custom_command(TARGET mellow POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_BINARY_DIR}/CMakeFiles/mellow.dir ${OBJECT_DIR}/mellow
