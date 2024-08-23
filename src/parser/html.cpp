@@ -8,8 +8,14 @@
 #define LINK_FILE "link.txt"
 #define MAX_LINK_LENGTH 1024
 
-void ParseHTML(std::ifstream& File)
+void ParseHTML(std::ifstream& File, const char FILE_PATH[])
 {
+    if (chdir(FILE_PATH) != 0)
+    {
+        std::cerr << "Could not change directory" << '\n';
+        exit(1);
+    }
+
     std::ofstream LinkFile;
     LinkFile.open(LINK_FILE);
 
@@ -61,6 +67,6 @@ void GetHTML(const char FILE_PATH[])
         exit(1);
     }
 
-    ParseHTML(HTMLFile);
+    ParseHTML(HTMLFile, FILE_PATH);
     HTMLFile.close();
 }
