@@ -28,7 +28,7 @@ add_executable(mellow
         src/setup/curl.c
         src/parser/ini.c
         src/setup/rmdir.cpp
-        src/setup/fileio/translate.c
+        src/setup/scripts/translate.c
         src/setup/fileio/writefile.c
         src/setup/scripts/formatfield.cpp
         include/files.h
@@ -44,7 +44,7 @@ add_executable(mellow
         src/parser/html.cpp
 )
 
-target_link_libraries(mellow curl git2 openssl)
+target_link_libraries(mellow curl git2)
 
 add_custom_command(TARGET mellow POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_BINARY_DIR}/CMakeFiles/mellow.dir ${OBJECT_DIR}/mellow
