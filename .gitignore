@@ -10,5 +10,10 @@ debug/CMakeFiles
 debug/build.ninja
 debug/cmake_install.cmake
 debug/CMakeCache.txt
+obj/mellow/cmake_clean.cmake
+obj/mellow/compiler_depend.ts
+obj/mellow/depened.make
+obj/mellow/compiler_depend.make
+obj/mellow/DependInfo.cmake
 testing/
 
