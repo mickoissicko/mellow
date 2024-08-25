@@ -45,24 +45,19 @@ void PrintFiles(const int INDEX, const char FILE_PATH[])
 void DisplayResults(const char FILE_PATH[])
 {
     StripNewlines(FILE_NAME, FILE_PATH);
-
     if (chdir(FILE_PATH) != 0)
     {
         perror("disp.c: Error changing directory");
         exit(1);
     }
 
-    char f_User[8192];
-    char f_Pkg[8192];
+    char Discard[8192];
     char Buf[8192];
-    char* Discard;
 
-    FILE* Results;
     FILE* Txt;
 
     int CurrentLine = 1;
     int Index = 1;
-    int Count = 1;
 
     Txt = fopen(FILE_NAME, "r");
 
