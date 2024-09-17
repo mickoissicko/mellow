@@ -18,14 +18,12 @@ char* ParseIni(const char INI[], const char FULL_PATH[])
     FILE* IniCfg = fopen(INI, "r");
 
     while(fgets(Line, MAX_LINE_LENGTH, IniCfg) != NULL)
-    {
         if (strstr(Line, "REQUIRED") != NULL)
         {
             Line[strcspn(Line, "\n")] = 0;
 
             return Line;
         }
-    }
 
     fclose(IniCfg);
     return 0;
